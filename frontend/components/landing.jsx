@@ -20,3 +20,5 @@ const Landing = props => {
         </div>
     )
 }
+
+export default Landing;

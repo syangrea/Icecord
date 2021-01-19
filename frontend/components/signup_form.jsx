@@ -27,13 +27,13 @@ export default class SignupForm extends React.Component{
                 password: ""
             });
             // should push to history the route for servers/channels
-        }).fail()
+        })
 
 
     }
 
     render(){
-        
+
     }
 
 }

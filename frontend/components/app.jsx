@@ -8,7 +8,7 @@ import ServerContainer from './server_container';
 
 const App = props => {
     return (
-        <div>
+        <div id="app">
             
 
                 <AuthRoute path="/login" component={LoginFormContainer}/>

@@ -21,15 +21,10 @@ export default class SignupForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.signup(this.state).then(() => {
-            this.setState({
-                email: "",
-                username: "",
-                password: ""
-            });
-            this.props.history.push("/server")
-            // should push to history the route for servers/channels
-        })
+        this.props.signup(this.state)
+        //auth route automatically redirects to server when logged in for now
+        //here might want to push exact server info or such later to history
+     
     }
 
     render(){

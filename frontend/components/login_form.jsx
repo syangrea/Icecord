@@ -20,14 +20,10 @@ export default class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state).then(() => {
-            this.setState({
-                email: "",
-                password: ""
-            });
-            this.props.history.push("/server")
-            // should push to history the route for servers/channels
-        })
+        // debugger
+        this.props.login(this.state)
+        //auth route automatically redirects to server when logged in for now
+        //here might want to push exact server info or such later to history
         
         
 

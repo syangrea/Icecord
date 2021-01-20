@@ -28,13 +28,19 @@ export const receiveErrors = errors => {
 export const signup = formUser => dispatch => {
     return SessionAPIUtil.signup(formUser)
                 .then(res => dispatch(receiveCurrentUser(res.user)))
-                .fail(res => dispatch(receiveErrors($.parseJSON(res.responseText))));
+                .fail(res => {
+                    dispatch(receiveErrors($.parseJSON(res.responseText)));
+                    
+                });
 }
 
 export const login = formUser => dispatch => {
     return SessionAPIUtil.login(formUser)
                 .then(res => dispatch(receiveCurrentUser(res.user)))
-                .fail(res => dispatch(receiveErrors($.parseJSON(res.responseText))));
+                .fail(res => {
+                    dispatch(receiveErrors($.parseJSON(res.responseText)));
+                    
+                });
 }
 
 export const logout = () => dispatch => {

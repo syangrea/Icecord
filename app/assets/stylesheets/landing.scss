@@ -1,13 +1,46 @@
 #landing{
-
-    #session-links{
-        a{
-            border: 1px darkblue solid ;
-            border-radius: 10px;
-    
-            float: right;
-
+    display: flex;
+    flex-direction: column;
+    #landing-home{
+        
+        background-color: #2a5ee8;
+        header{
+            display: flex;
+            flex-direction: row;
+            
+            #session-links{
+                align-self: center;
+                a{
+                    border: 1px darkblue solid ;
+                    border-radius: 10px;
+                    
+                    
+        
+                }
+                
+            }
+            height: 50px;
         }
+        height: 500px;
+    }
+
+    .landing-content{
+        display: block;
+        margin: 0px 50px 0px 50px;
+        display: block;
+        height: 500px;
+        
+    }
+
+    #landing-body{
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        
+    }
+
+    #landing-footer{
+        height: 500px;
     }
 
 }

@@ -3,3 +3,11 @@
     font-size: 100;
 }
 
+.discord-logo-name{
+    width: 80px;
+    color: white;
+    background-color: blue;
+    image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}

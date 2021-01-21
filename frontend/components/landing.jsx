@@ -7,7 +7,7 @@ const Landing = props => {
             <div id="landing-home">
                 <div className="landing-content landing-home-content">
                     <header>
-                        <img className="discord-logo" src="/assets/discord_logo.png" alt=""/>
+                        <img className="discord-logo" src={window.discordLogo} alt=""/>
                         <div id="session-links">
                             <Link className="link-size-small" to="/login">Login</Link>
                             
@@ -23,7 +23,7 @@ const Landing = props => {
                         <div id="landing-home-links">
 
                             <a className="link-size-big" href="#">Github</a>
-                            <a className="link-size-big" href="#">Try Demo</a>
+                            <Link to="/login" className="link-size-big">Try Demo</Link>
                         </div>
 
                     </div>
@@ -127,7 +127,7 @@ const Landing = props => {
                         </div>
                     </div>
                     <div className="landing-content">
-                        <img className="discord-logo" src="/assets/discord_logo.png" alt="" />
+                        <img className="discord-logo" src={window.discordLogo} alt="" />
                         <Link className="link-size-small" to="/signup">Sign Up</Link>
                     </div>
                     

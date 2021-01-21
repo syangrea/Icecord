@@ -1,4 +1,4 @@
-import {signup} from '../actions/session_action';
+import {signup, clearSessionErrors} from '../actions/session_action';
 import {connect} from 'react-redux';
 import SignupForm from './signup_form';
 import {parseErrors} from '../utils/session_form_util';
@@ -13,6 +13,9 @@ const mDTP = dispatch => {
     return {
         signup: user => {
             return dispatch(signup(user));
+        },
+        clearSessionErrors: () => {
+            return dispatch(clearSessionErrors())
         }
     }
 }

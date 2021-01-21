@@ -1,0 +1,356 @@
+.session-page{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: image-url('session_form_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    
+    .discord-logo{
+        position: absolute;
+        top: 17px;
+        left: 17px;
+    }
+    
+    h2{
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+    }
+    
+    h5{
+        font-size: 16px;
+        color: #8e9297;
+    }
+    
+    label{
+        font-size: 12px;
+        color: #8e9297;
+        font-weight: 700;
+    }
+
+    a{
+        color: #7289da;
+        font-size: 14px;
+    }
+
+    a:hover{
+        text-decoration: underline;
+    }
+
+    input{
+        padding: 10px;
+        height: 20px;
+        border: 1px #222428 solid;
+        border-radius: 5px;
+        background-color: #313339;
+        color: #d3d4d6;
+        font-size: 16px;
+    }
+
+    
+
+    input:hover{
+        border: 1px #040405 solid;
+    }
+
+    input:focus{
+        border: 1px #7289da solid;
+        outline: none;
+    }
+
+    .error-label{
+        color: #f04747;
+    }
+
+    .error-input{
+        border-color:  #f04747;
+    }
+    .error-input:focus{
+        border-color:  #f04747;
+    }
+    .error-input:hover{
+        border-color:  #f04747;
+    }
+
+    .session-form-container{
+        box-shadow: 0px 0px 3px  black;
+        padding: 32px 32px 32px 32px;
+        background-color: #36393f;
+        border-radius: 5px;
+        position: absolute;
+        left: 345px;
+
+        .session-form{
+            display: flex;
+            flex-direction: column;
+
+            button{
+                margin-top: 20px;
+                margin-bottom: 8px;
+                height: 40px;
+                border: 0px;
+                border-radius: 5px;
+                color: white;
+                font-weight: 600;
+                background-color: #7289da;
+            }
+
+            button:hover{
+                background-color: rgba(103,123,196,1);
+            }
+            button:active{
+                background-color: #5b7eae;
+            }
+            button:focus{
+                
+                outline: none;
+            }
+        }
+    }
+
+
+}
+
+#login{
+   
+    #login-form{
+        
+        width: 720px;
+        height: 344px;
+        
+        display: flex;
+        justify-content: space-between;
+        
+        
+        
+        form{
+            width: 414px;
+            height: 342px;
+            
+            h2{
+                margin-bottom: 15px;
+                align-self: center;
+            }
+            h5{
+                align-self: center;
+                
+                
+            }
+            #login-signup-link{
+                align-self: flex-start;
+            }
+
+            label{
+                margin-top: 20px;
+                margin-bottom: 8px;
+                
+            }
+            input{
+                margin-bottom: 8px;
+                
+            }
+            
+            
+        }
+        #demo-button{
+            display: flex;
+            flex-direction: column;
+            width: 240px;
+            height: 344px;
+            justify-content: center;
+            align-items: center;
+            button{
+                width: 176px;
+                height: 176px;
+                margin-bottom: 32px;
+            }
+            h2{
+                margin-bottom: 8px;
+            }
+            h5{
+                text-align: center;
+            }
+        }
+        
+    }
+}
+
+#signup{
+    #signout-form{
+        width: 416px;
+        height: 498px;
+
+        form{
+            display: flex;
+            flex-direction: column;
+
+            h2{
+                align-self: center;
+                margin-bottom: 20px;
+            }
+            label{
+                margin-bottom: 8px;
+            }
+            input{
+                margin-bottom: 20px;
+            }
+            button{
+                height: 40px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
+        }
+
+        #signup-dob{
+            display: flex;
+            justify-content: space-between;
+
+            .dob-dropdown-label{
+               
+                background-color: #313339;
+                color: #8e9297;
+                font-size: 16px;
+                height: 38px;
+                font-size: 18px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                
+
+                ::-webkit-scrollbar{
+                    width: 8px;
+                }
+                ::-webkit-scrollbar-thumb{
+                    border-radius: 10px;
+                    background-color: black;
+
+                }
+
+                
+                svg{
+                    fill:rgba(185,187,190,1);
+                    height: 12px;
+                    width: 20px;
+                    margin-right: 7px;
+                }
+                input{
+                    padding: 0px 0 0px 8px;
+                    color: #d3d4d6;
+                    border: none;
+                    margin: 0;
+                    height: 35px;
+                }
+                ul{
+                    height: 205px;
+                    overflow-y: scroll;
+                }
+                .dob-dropdown{
+                    height: 205px;
+                    position: absolute;
+                    top: -205px;
+                    left: 0px;
+                    border: 1px #222428 solid;
+                    border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    background-color: #313339;
+                    color: #8e9297;
+                    
+                    overflow: hidden;
+                    li{
+                        height: 38px;
+                        padding: 2px 8px 2px 8px;
+                        display: flex;
+                        align-items: center;
+                        z-index: 2;
+                    }
+                    li:hover{
+                        background-color: rgba(32,34,37,0.5);
+                    }
+                    display: none;
+                    
+                }
+
+                input:focus ~ .dob-dropdown{
+                    display: block;
+                    transition-delay: 2s;
+                    transition-duration: 2s;
+                }
+
+                #dob-month-options{
+                    width: 150px;
+                    
+                }
+                #dob-day-options{
+                    width: 98px;
+                    
+                }
+                #dob-year-options{
+                    width: 118px;
+                    
+                }
+            }
+
+            
+
+            
+
+            .dob-select{
+                 border: 1px #222428 solid;
+                border-radius: 5px;
+                padding: 0;
+            }
+
+            .dob-select:hover{
+                border: 1px #040405 solid;
+                
+            }
+
+            
+
+
+            #dob-month{
+                width: 152px;
+                input{
+                    width: 120px;
+                }
+                
+            }
+            #dob-day{
+                width: 100px;
+                input{
+                    width: 70px;
+                }
+               
+            }
+            #dob-year{
+                width: 120px;
+                input{
+                    width: 90px;
+                }
+                
+            }
+        }
+        a{
+            margin-top: 2px;
+        }
+        p{
+            font-size: 12px;
+            color: #8e9297;
+            margin-top: 22px;
+            
+        };
+    }
+
+
+
+}

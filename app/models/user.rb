@@ -8,6 +8,18 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    has_many :user_servers
+    has_many :servers,
+        through: :user_servers
+    
+    has_many :owned_servers,
+        primary_key: :id,
+        foreign_key: :owner_id,
+        class_name: :Server
+    
+       
+    #  may want to have an association for private servers. can use has many with sql where
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return user if user && user.is_password?(password)
@@ -32,6 +44,7 @@ class User < ApplicationRecord
         self.save!
         self.session_token
     end
+
 
     private
     def ensure_session_token 

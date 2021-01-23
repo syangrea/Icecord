@@ -5,11 +5,10 @@ import configureStore from './store/store'
 import * as SessionActions from './actions/session_action';
 window.SessionActions = SessionActions;
 import Root from './components/root'
-import * as ServerApiUtil from './utils/server_api_util';
-import * as UserServerApiUtil from './utils/user_server_api_util';
+import * as ServerAction from "./actions/server_action";
 
-window.ServerApiUtil = ServerApiUtil;
-window.UserServerApiUtil = UserServerApiUtil;
+
+window.ServerAction = ServerAction;
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");

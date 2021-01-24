@@ -5,11 +5,8 @@ json.user do
 end
 
 json.servers do
-    @user.servers.each do |server|
-        json.set! server.id do
-            json.extract! server, :id, :name, :link
-        end
-    end
+    json.partial! 'api/users/servers', user: @user
+    
 end
 
 json.user_servers do

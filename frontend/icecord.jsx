@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
             entities: {
                 users: {
                     [window.currentUser.id]: currentUser
-                 }
+                 },
+                 servers: window.servers
                  
             },
             session: {

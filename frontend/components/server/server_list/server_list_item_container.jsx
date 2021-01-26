@@ -1,14 +1,12 @@
 import { connect } from 'react-redux';
 import { deleteServer, fetchServer, leaveServer } from '../../../actions/server_action';
+import { getUserServer } from '../../../utils/server_util';
 import ServerListItem from './server_list_item';
+
 
 const mSTP = (state, ownProps) => {
     return {
-        userServerId: Object.keys(state.entities.userServers)
-            .find(userServer => {
-                return userServer.userId === state.session.id 
-                    && userServer.serverId === ownProps.server.id
-            }),
+        userServerId: getUserServer(state, ownProps.match.params.serverId)
         
     }
 }
@@ -17,10 +15,6 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
 
-        fetchServer: serverId => {
-            return dispatch(fetchServer(serverId))
-        },
-        
         updateServer: server => {
             return dispatch(updateServer(server))
         },

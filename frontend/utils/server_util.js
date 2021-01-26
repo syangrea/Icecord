@@ -1,9 +1,20 @@
 export const getMembers = (state, serverId) => {
     
-    return Object.values(state.entites.userServers).filter(userServer => {
+    let uServers = Object.values(state.entities.userServers).filter(userServer => {
             return userServer.serverId === serverId;
-        }).map(userServer => {
+        })
+        debugger
+    let users = uServers.map(userServer => {
+            debugger
             return state.entities.users[userServer.userId];
         })
-    
+    return users;
+}
+
+export const getUserServer = (state, serverId) => {
+    return Object.keys(state.entities.userServers)
+        .find(userServer => {
+            return userServer.userId === state.session.id
+                && userServer.serverId === serverId
+        }),
 }

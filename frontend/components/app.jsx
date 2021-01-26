@@ -5,11 +5,14 @@ import SignupFormContainer from './signup_form_container';
 import LoginFormContainer from './login_form_container';
 import {AuthRoute, ProtectedRoute} from '../utils/route_util';
 import ServerLandingContainer from './server/server_landing_container';
+import Modal from './modal/modal';
+import SettingsModal from './setttings_modal/settings_modal';
 
 const App = props => {
     return (
         <div id="app">
-            
+                <Modal />
+                <SettingsModal />
 
                 <AuthRoute path="/login" component={LoginFormContainer}/>
                 <AuthRoute path="/signup" component={SignupFormContainer}/>

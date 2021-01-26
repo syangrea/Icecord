@@ -1,6 +1,7 @@
 import React from 'react';
 import ChannelListContainer from '../channel/channel_list_container';
 import ServerMemberListContainer from './server_member_list/server_member_list_container';
+import ServerRightClickDropdownContainer from './dropdown/server_right_click_dropdown_container';
 
 export default class Server extends React.Component{
 
@@ -9,9 +10,21 @@ export default class Server extends React.Component{
 
     }
 
+    componentDidMount(){
+        debugger
+        return this.props.fetchServer(this.props.match.params.serverId);
+    }
+
+    componentDidUpdate(oldProps){
+        if(oldProps.match.params.serverId !== this.props.match.params.serverId){
+            return this.props.fetchServer(this.props.match.params.serverId);
+        }
+    }
+
     render(){
         return (
             <div id="server">
+                <ServerRightClickDropdownContainer/>
                 <ChannelListContainer />
                 <ServerMemberListContainer />
             </div>

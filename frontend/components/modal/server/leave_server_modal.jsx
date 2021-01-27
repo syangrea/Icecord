@@ -4,6 +4,7 @@ export default class LeaveServerModal extends React.Component{
     
 
     render(){
+        // debugger
         return(
             <div id="leave-server">
                 <h5>Leave '{this.props.server.name}'</h5>
@@ -14,7 +15,7 @@ export default class LeaveServerModal extends React.Component{
                 </span>
                 
                 <button onClick={() => this.props.closeModal()}> Cancel </button>
-                <button onClick={() => this.props.leaveServer(this.props.userServerId)}>Leave Server</button>
+                <button onClick={() => this.props.leaveServer(this.props.userServer)}>Leave Server</button>
 
                    
                 

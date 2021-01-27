@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { closeModal } from '../../../actions/modal_action';
+import { closeModal, openModal } from '../../../actions/modal_action';
 import { joinServer} from '../../../actions/server_action';
 
 import JoinServerModal from './join_server_modal';

@@ -23,7 +23,7 @@ export default class InviteModal extends React.Component{
             <div id="invite-modal modal">
 
                 <h5>INVITE FRIENDS TO {this.props.server.name}</h5>
-                <button onClick={this.props.closeModal()}>X</button>
+                <button onClick={e => this.props.closeModal()}>X</button>
                 <span>Share this link with others to grant access to this server</span>
                 <div id="invite-link-container">
                     <input type="text" value={this.props.server.link} readOnly

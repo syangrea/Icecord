@@ -1,5 +1,5 @@
 import React from 'react';
-import ServerListItemContainer from './server_list_item';
+import ServerListItemContainer from './server_list_item_container';
 
 export default class ServerList extends React.Component{
 

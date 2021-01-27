@@ -7,15 +7,16 @@ import LeaveServerModal from './leave_server_modal';
 
 const mSTP = (state, ownProps) => {
     return {
-        userServerId: getUserServer(state, state.ui.filters.serverClicked),
+        userServer: getUserServer(state, state.ui.filters.serverClicked),
         server: state.entities.servers[state.ui.filters.serverClicked]
     }
 }
 
 const mDTP = dispatch => {
     return {
-          leaveServer: userServerId => {
-              return dispatch(leaveServer(userServerId));
+          leaveServer: userServer => {
+            //   debugger
+              return dispatch(leaveServer(userServer));
           },
           closeModal: () => {
               return dispatch(closeModal())

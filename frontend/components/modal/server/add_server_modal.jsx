@@ -7,6 +7,7 @@ export default class AddServerModal extends React.Component{
     }
 
     render(){
+        // debugger
         return(
             <div id="add-server">
                 <button onClick={() => this.props.closeModal()}>X</button>

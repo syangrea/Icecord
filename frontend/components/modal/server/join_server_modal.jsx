@@ -17,7 +17,7 @@ export default class JoinServerModal extends React.Component {
     render() {
         return (
             <div id="join-server">
-                <button onClick={this.props.closeModal()}>X</button>
+                <button onClick={e => this.props.closeModal()}>X</button>
                 <div id="join-server-form">
                     <h3>Join a server</h3>
                     <span>Enter an invite below to join an existing server
@@ -29,7 +29,8 @@ export default class JoinServerModal extends React.Component {
                     
                     </label>
                     <input type="text" id="server-link"
-                        value={this.state.link.length > 0 ? this.state.link : "NEq6offxxZu9U2vf06idug"}
+                        placeholder="NEq6offxxZu9U2vf06idug"
+                        value={this.state.link}
                         className={this.state.link.length > 0 ? "default-link" : null}
                         onChange={e => this.setState({ link: e.target.value })}
                     />

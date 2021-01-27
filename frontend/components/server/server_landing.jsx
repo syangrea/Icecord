@@ -24,19 +24,19 @@ export default class ServerLanding extends React.Component{
                 <div id="server-nav-bar">
                     <Link>Me</Link>
                     <ServerListContainer />
-                    <Link><img src="https://img.icons8.com/android/24/000000/plus.png"/></Link>
+                    {this.props.addServerModal}
                     <Link><img src="https://img.icons8.com/office/16/000000/compass--v1.png" /></Link>
                 </div>
                 
                 <Route path="/server/:serverId" component={ServerContainer}/>
-                <Link to="/server/create">Create Server</Link>
-                <Route path="/server/create" render={props => {
-                    return <CreateServerForm {...props} 
-                    createServer={this.props.createServer}
-                    />
-                }}/>
-
-                <button onClick={this.handleLogout}>Logout</button>
+                
+                
+                
+                <div id="name-settings">
+                    {this.props.user.username}
+                    {this.props.userSettingsModal}
+                </div>
+                
             </div>
         )
     }

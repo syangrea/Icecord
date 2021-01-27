@@ -1,13 +1,13 @@
 import React from 'react';
 import ChannelListContainer from '../channel/channel_list_container';
 import ServerMemberListContainer from './server_member_list/server_member_list_container';
-import ServerRightClickDropdownContainer from './dropdown/server_right_click_dropdown_container';
 
 export default class Server extends React.Component{
 
     constructor(props){
         super(props);
 
+        
     }
 
     componentDidMount(){
@@ -24,7 +24,7 @@ export default class Server extends React.Component{
     render(){
         return (
             <div id="server">
-                <ServerRightClickDropdownContainer/>
+               
                 <ChannelListContainer />
                 <ServerMemberListContainer />
             </div>

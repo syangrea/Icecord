@@ -6,30 +6,47 @@ import LeaveServerModalContainer from './server/leave_server_modal_container';
 import InviteModalContainer from './server/invite_modal_container';
 import CreateServerModalContainer from './server/create_server_modal_container';
 import JoinServerModalContainer from './server/join_server_modal_container';
+import DeleteServerModalContainer from './server/delete_server_modal_container';
+import LogoutModalContainer from './user/logout_modal_container'
 
 function Modal({modal, closeModal}){
+    // debugger
     if(!modal){
+        // debugger
         return null;
     }
 
     let component;
     switch(modal){
         case 'leaveServer':
-            component = <LeaveServerModalContainer />
+            component = <LeaveServerModalContainer />;
+            break;
         case 'invitePeople':
-            component = <InviteModalContainer />
+            component = <InviteModalContainer />;
+            break;
         case 'addServer':
-            component = <AddServerModalContainer/>
+            // debugger
+            component = <AddServerModalContainer />;
+            break;
         case 'createServer':
-            component = <CreateServerModalContainer />
+            component = <CreateServerModalContainer />;
+            break;
         case 'joinServer':
-            component = <JoinServerModalContainer />
+            component = <JoinServerModalContainer />;
+            break;
+        case 'deleteServer':
+            component = <DeleteServerModalContainer />;
+            break;
+        case 'logout':
+            component = <LogoutModalContainer />;
+            break;
         default:
             return null;
     }
+    // debugger
 
     return (
-        <div className="modal-background" onClick={closeModal}>
+        <div className="modal-background" onClick={closeModal} onClick={e => e.stopPropagation()}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
                 {component}
             </div>
@@ -37,7 +54,9 @@ function Modal({modal, closeModal}){
     )
 }
 
+
 const mSTP = state => {
+    // debugger
     return {
         modal: state.ui.modal
     }

@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 users: {
                     [window.currentUser.id]: currentUser
                  },
-                 servers: window.servers
+                 servers: window.servers,
+                 userServers: window.userServers
                  
             },
             session: {
@@ -30,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         store = configureStore(preloadedState);
         delete window.currentUser;
+        delete window.servers;
+        delete window.userServers;
     }else{
         store = configureStore();
     }

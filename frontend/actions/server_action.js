@@ -20,10 +20,10 @@ export const removeServer = serverId => {
     }
 }
 
-export const removeUserServer = userServerId => {
+export const removeUserServer = userServer => {
     return {
         type: REMOVE_USER_SERVER,
-        userServerId
+        userServer
     }
 }
 
@@ -63,8 +63,8 @@ export const joinServer = link => dispatch => {
         .fail(res => dispatch(receiveServerErrors($.parseJSON(res.responseText))))
 }
 
-export const leaveServer = userServerId => dispatch =>{
-    return ServerAPIUtil.leaveServer(userServerId)
-        .then(() => dispatch(removeUserServer(userServerId)))
+export const leaveServer = userServer => dispatch =>{
+    return ServerAPIUtil.leaveServer(userServer.id)
+        .then(() => dispatch(removeUserServer(userServer)))
         .fail(res => dispatch(receiveServerErrors($.parseJSON(res.responseText))));
 }

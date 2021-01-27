@@ -11,8 +11,8 @@ import SettingsModal from './setttings_modal/settings_modal';
 const App = props => {
     return (
         <div id="app">
-                <Modal />
                 <SettingsModal />
+                <Modal />
 
                 <AuthRoute path="/login" component={LoginFormContainer}/>
                 <AuthRoute path="/signup" component={SignupFormContainer}/>

@@ -40,7 +40,7 @@ class Api::ServersController < ApplicationController
 
     private
     def server_params
-        params.require(:server).permit(:id, :name, :owner_id, :direct_message)
+        params.require(:server).transform_keys(&:underscore).permit(:id, :name, :owner_id, :direct_message)
     end
 
 

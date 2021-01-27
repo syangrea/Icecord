@@ -1,30 +1,33 @@
 import { connect } from 'react-redux';
-import { deleteServer, fetchServer, leaveServer } from '../../../actions/server_action';
-import { getUserServer } from '../../../utils/server_util';
+import { openModal } from '../../../actions/modal_action';
 import ServerListItem from './server_list_item';
+import {openSettingsModal} from '../../../actions/settings_modal_action';
+
+import { serverClick } from '../../../actions/filter_actions';
 
 
 const mSTP = (state, ownProps) => {
+    debugger
     return {
-        userServerId: getUserServer(state, ownProps.match.params.serverId)
+        isOwner: ownProps.server.ownerId === state.session.id
         
     }
 }
 
 
 const mDTP = dispatch => {
+    // debugger
     return {
-
-        updateServer: server => {
-            return dispatch(updateServer(server))
+        openModal: modalName => {
+            return dispatch(openModal(modalName))
         },
-        deleteServer: serverId => {
-            return dispatch(deleteServer(serverId))
+        openSettingsModal: settingsModalName => {
+            return dispatch(openSettingsModal(settingsModalName))
         },
-        
-        leaveServer: userServerId => {
-            return dispatch(leaveServer(userServerId));
+        serverClick: (serverId) => {
+            return dispatch(serverClick(serverId));
         }
+        
     }
 }
 

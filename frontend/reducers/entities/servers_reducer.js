@@ -12,7 +12,10 @@ const ServersReducer = (state = {}, action) => {
             return c;
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, action.payload.servers)
-
+        case REMOVE_USER_SERVER:
+            let co = Object.assign({}, state);
+            delete co[action.userServer.serverId];
+            return co;
         case LOGOUT_CURRENT_USER:
             return {}
         default:

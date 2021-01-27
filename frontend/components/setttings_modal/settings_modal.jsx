@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeSettingsModal } from '../../actions/settings_modal_action';
+import ServerSettingsModalContainer from './server/server_settings_modal_container'
+import UserSettingsModalContainer from './user/user_settings_modal_container'
 
 function SettingsModal({ settingsModal, closeSettingsModal }) {
     if (!settingsModal) {
@@ -10,16 +12,18 @@ function SettingsModal({ settingsModal, closeSettingsModal }) {
     let component;
     switch (settingsModal) {
         case 'user':
-
+            component = <UserSettingsModalContainer />;
+            break;
         case 'server':
-
+            component = <ServerSettingsModalContainer />;
+            break;
         default:
             return null;
     }
 
     return (
-        <div className="settings-modal-background" onClick={closeSettingsModal}>
-            <div className="setting-modal-child" onClick={e => e.stopPropagation()}>
+        <div  className="settings-modal">
+            <div className="setting-modal-child">
                 {component}
             </div>
         </div>

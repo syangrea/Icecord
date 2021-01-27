@@ -11,13 +11,13 @@ export default class CreateServerModal extends React.Component{
     }
 
     handleCreate(e){
-        return this.props.createServer({name: this.state.serverName, owner_id: this.props.user.id});
+        return this.props.createServer({name: this.state.serverName, direct_message: false, ownerId: this.props.user.id});
     }
 
     render(){
         return(
             <div id="create-server">
-                <button onClick={this.props.closeModal()}>X</button>
+                <button onClick={e => this.props.closeModal()}>X</button>
                 <div id="create-server-form">
                     <h3>Customize your server</h3>
                     <span>Give your new server a personality with a name.
@@ -29,7 +29,7 @@ export default class CreateServerModal extends React.Component{
                         value={this.state.serverName}
                         onChange={e => this.setState({serverName: e.target.value})}
                     />
-                    <span class="small-span">By creating a server, you aren't 
+                    <span className="small-span">By creating a server, you aren't 
                         agreeing to anything.    
                     </span>
                 </div>

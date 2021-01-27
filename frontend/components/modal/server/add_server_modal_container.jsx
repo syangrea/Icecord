@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { closeModal, openModal } from '../../../actions/modal_action';
 import AddServerModal from './add_server_modal';
+import React from 'react'
 
 
 const mSTP = () => {

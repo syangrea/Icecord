@@ -4,12 +4,21 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: image-url('session_form_background.jpg');
+    // background-image: image-url('session_form_background.jpg');
+    background-image: url('https://discord.com/assets/fd91131ea693096d6be5e8aa99d18f9e.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
+
+    #black-blob-img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1000px;
+        height: 832px;
+    }
     
     .discord-logo{
         position: absolute;

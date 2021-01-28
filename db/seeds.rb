@@ -60,3 +60,5 @@ us18 = UserServer.create(user_id: u2.id, server_id: s5.id)
 us19 = UserServer.create(user_id: u3.id, server_id: s5.id)
 us20 = UserServer.create(user_id: u4.id, server_id: s5.id)
 
+
+

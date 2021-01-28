@@ -1,0 +1,23 @@
+
+.channel-list-item{
+    height: 34px;
+    width: 224px;
+    border-radius: 5px;
+    background-color: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+
+    div{
+        padding-left: 25px;
+        height: 16px;
+    }
+    
+}
+
+.channel-list-item:hover{
+  background-color: #393c43;
+}

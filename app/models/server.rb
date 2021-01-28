@@ -6,7 +6,7 @@ class Server < ApplicationRecord
     validate :owner_in_server, on: :update
 
     after_initialize :ensure_unique_link
-    after_create :owner_join
+    after_create :owner_join, :create_default_channel
 
     has_many :user_servers, dependent: :destroy
     has_many :users,
@@ -17,6 +17,7 @@ class Server < ApplicationRecord
         foreign_key: :owner_id,
         class_name: :User
 
+    has_many :channels, dependent: :destroy
     
 
     def owner_in_server
@@ -42,6 +43,10 @@ class Server < ApplicationRecord
 
     def owner_join
         UserServer.create(user_id: self.owner_id, server_id: self.id);
+    end
+
+    def create_default_channel
+        Channel.create(name: "General", server_id: self.id, creator_id: self.owner_id);
     end
 
 

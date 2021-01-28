@@ -16,6 +16,11 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :owner_id,
         class_name: :Server
+
+    has_many :created_channels,
+        primary_key: :id,
+        foreign_key: :creator_id,
+        class_name: :Channel
     
        
     #  may want to have an association for private servers. can use has many with sql where

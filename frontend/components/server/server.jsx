@@ -79,7 +79,7 @@ export default class Server extends React.Component{
                 </div>
                 <div id="server-body">
 
-                    <ChannelListContainer />
+                    <ChannelListContainer server={this.props.server}/>
                     <div id="channel-messages">Messages</div>
                     <ServerMemberListContainer />
                 </div>

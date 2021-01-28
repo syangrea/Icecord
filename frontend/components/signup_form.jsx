@@ -19,7 +19,8 @@ export default class SignupForm extends React.Component{
 
     update(field){
         return e => {
-            return this.setState({[field]: e.target.value})
+            e.preventDefault();
+            
         }
     }
 
@@ -64,15 +65,15 @@ export default class SignupForm extends React.Component{
                             PASSWORD {this.props.errors.password ? `- ${this.props.errors.password}` : null}
                         </label>
                         <input type="password" className={this.props.errors.password ? "error-input" : ""} id="signup-password" value={this.state.password} onChange={this.update("password")}/>
-                        <label>DATE OF BIRTH</label>
+                        <label>DATE OF BIRTH - optional</label>
                         <div id="signup-dob">
                             
                             <div id="dob-month" className="dob-select">
                                 <div className="dob-dropdown-label">
                                     <input id="month-input" type="text" 
-                                        value={this.state.dobMonth.length === 0 ? "Month" : this.state.dobMonth} 
+                                        value={this.state.dobMonth} 
                                         onChange={this.update('dobMonth')} 
-                                        
+                                        placeholder="Month"
                                     />
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg>
                                     <div id="dob-month-options" className="dob-dropdown">
@@ -89,7 +90,7 @@ export default class SignupForm extends React.Component{
                             </div>
                             <div id="dob-day" className="dob-select">
                                 <div className="dob-dropdown-label" >
-                                    <input type="text" onChange={this.update('dobDay')} value={this.state.dobDay.length === 0 ? "Day" : this.state.dobDay} />
+                                    <input type="text" onChange={this.update('dobDay')} value={this.state.dobDay} placeholder="Day"/>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg>
                                     
                                     <div  id="dob-day-options" className="dob-dropdown">
@@ -105,7 +106,7 @@ export default class SignupForm extends React.Component{
                             </div>
                             <div id="dob-year" className="dob-select">
                                 <div className="dob-dropdown-label">
-                                    <input type="text" value={this.state.dobYear.length === 0 ? "Year" : this.state.dobYear} onChange={this.update('dobYear')}/>
+                                    <input type="text" value={this.state.dobYear} onChange={this.update('dobYear')} placeholder="Year"/>
                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg>
                                     <div id="dob-year-options" className="dob-dropdown">
 

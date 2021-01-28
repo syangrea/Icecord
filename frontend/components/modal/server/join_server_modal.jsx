@@ -16,17 +16,23 @@ export default class JoinServerModal extends React.Component {
 
     render() {
         return (
-            <div id="join-server">
-                <button onClick={e => this.props.closeModal()}>X</button>
-                <div id="join-server-form">
-                    <h3>Join a server</h3>
+            <div id="join-server" className="add-server-modals">
+                <button className="modal-exit-button" onClick={() => this.props.closeModal()}>
+                    <img src="https://img.icons8.com/officel/16/000000/multiply.png" />
+                </button>                
+                <div id="join-server-header" className="add-server-modals-header">
+                    
+                    <h2>Join a server</h2>
                     <span>Enter an invite below to join an existing server
                     </span>
+                </div>
+
+                <div id="join-server-body" className="add-server-modals-body">
 
                     <label htmlFor="server-link" className={this.props.errors.length > 0 ? "error-link" : null}>
-                        INVITE LINK {this.props.errors.length > 0 ? `- ${this.props.errors.join(" ")}` 
+                        INVITE LINK {this.props.errors.length > 0 ? `- ${this.props.errors.join(" ")}`
                             : null}
-                    
+
                     </label>
                     <input type="text" id="server-link"
                         placeholder="NEq6offxxZu9U2vf06idug"
@@ -36,12 +42,16 @@ export default class JoinServerModal extends React.Component {
                     />
                     <label>
                         INVITES SHOULD LOOK LIKE
-                        <span id="link-examples">NEq6offxxZu9U2vf06idug</span>
                     </label>
+                    <span id="link-examples">NEq6offxxZu9U2vf06idug</span>
+                    <span id="link-examples">4A4RnHlIAiAjiJbEnND_wg</span>
+                    <span id="link-examples">xpCSwUYQsPjHPoa1lzaVQQ</span>
                 </div>
-                <div id="join-server-buttons">
+                    
+               
+                <div id="join-server-footer" className="add-server-modals-footer create-join-modal-footer">
                     {this.props.addServerModal}
-                    <button onClick={this.handleJoin}>Join Server</button>
+                    <button onClick={this.handleJoin} id="join-server-button" className="create-join-button">Join Server</button>
                 </div>
             </div>
         )

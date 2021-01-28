@@ -10,7 +10,10 @@ export default class SignupForm extends React.Component{
             password: "",
             dobMonth: "",
             dobDay: "",
-            dobYear: ""
+            dobYear: "",
+            showMonth: false,
+            showDay: false,
+            showYear: false
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,14 +37,48 @@ export default class SignupForm extends React.Component{
     handleSelectOption(field){
         // debugger
         return (e) => {
-            debugger
+            // debugger
             return this.setState({[field]: e.target.innerText});
+        }
+    }
+
+    handleShow(field){
+        return e => {
+            this.setState({[`show${field}`]: true})
+        }
+    }
+
+    handleBlur(field){
+        return e => {
+            setTimeout(() => {
+                
+                this.setState({[`show${field}`]: false})
+            }, 30)
+        }
+    }
+
+    handleArrowClick(field){
+        return e => {
+            switch(field){
+                case 'Month':
+                    this.monthInput.focus();
+                    break;
+    
+                case 'Day':
+                    this.dayInput.focus();
+                    break;
+                case 'Year':
+                    this.yearInput.focus();
+                    break;
+
+            }
         }
     }
 
     componentWillUnmount() {
         this.props.clearSessionErrors();
     }
+    
     
 
     render(){
@@ -72,9 +109,13 @@ export default class SignupForm extends React.Component{
                                     <input id="month-input" type="text" 
                                         value={this.state.dobMonth.length === 0 ? "Month" : this.state.dobMonth} 
                                         onChange={this.update('dobMonth')} 
-                                        
+                                        onFocus={this.handleShow('Month')}
+                                        ref={el => this.monthInput = el}
+                                        onBlur={this.handleBlur('Month')}
                                     />
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg>
+                                    <svg onClick={this.handleArrowClick("Month")} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg>
+                                    
+                                    {this.state.showMonth ? 
                                     <div id="dob-month-options" className="dob-dropdown">
                                         
                                         <ul>
@@ -84,14 +125,23 @@ export default class SignupForm extends React.Component{
                                             })}
                                         </ul>
 
-                                    </div>
+                                    </div> : null
+
+                                        }
                                 </div>
                             </div>
                             <div id="dob-day" className="dob-select">
                                 <div className="dob-dropdown-label" >
-                                    <input type="text" onChange={this.update('dobDay')} value={this.state.dobDay.length === 0 ? "Day" : this.state.dobDay} />
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg>
+                                    <input type="text" 
+                                        onChange={this.update('dobDay')} 
+                                        value={this.state.dobDay.length === 0 ? "Day" : this.state.dobDay} 
+                                        onFocus={this.handleShow('Day')}
+                                        ref={el => this.dayInput = el}
+                                        onBlur={this.handleBlur('Day')}
+                                    />
+                                    <svg onClick={this.handleArrowClick("Day")} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg>
                                     
+                                    {this.state.showDay ? 
                                     <div  id="dob-day-options" className="dob-dropdown">
 
                                         <ul >
@@ -100,13 +150,21 @@ export default class SignupForm extends React.Component{
                                             },this)}
                                         </ul>
 
-                                    </div>
+                                    </div> : null
+                                    }
                                 </div>
                             </div>
                             <div id="dob-year" className="dob-select">
                                 <div className="dob-dropdown-label">
-                                    <input type="text" value={this.state.dobYear.length === 0 ? "Year" : this.state.dobYear} onChange={this.update('dobYear')}/>
-                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg>
+                                    <input type="text" 
+                                        value={this.state.dobYear.length === 0 ? "Year" : this.state.dobYear} 
+                                        onChange={this.update('dobYear')}
+                                        onFocus={this.handleShow('Year')}
+                                        ref={el => this.yearInput = el}
+                                        onBlur={this.handleBlur('Year')}
+                                    />
+                                     <svg onClick={this.handleArrowClick("Year")} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" /></svg>
+                                    {this.state.showYear ?
                                     <div id="dob-year-options" className="dob-dropdown">
 
                                         <ul>
@@ -115,7 +173,8 @@ export default class SignupForm extends React.Component{
                                             },this)}
                                         </ul>
 
-                                    </div>
+                                    </div> : null
+                                    }
                                 </div>
                                 
                             </div>

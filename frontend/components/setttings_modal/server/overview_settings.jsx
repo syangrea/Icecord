@@ -18,7 +18,7 @@ export default class OverviewSettings extends React.Component{
     }
 
     handleSave(e){
-        debugger
+        // debugger
         this.props.updateServer(Object.assign({}, this.props.server, this.state));
     }
 
@@ -26,11 +26,11 @@ export default class OverviewSettings extends React.Component{
         let saveChanges = null;
         if(this.props.server.name !== this.state.name){
             saveChanges = (
-            <div>
-                Careful--you have unsaved changes!
+            <div id="server-save-changes">
+                <span>Careful--you have unsaved changes!</span>
                 <div>
-                    <button onClick={this.handleReset}>Reset</button>
-                    <button onClick={this.handleSave}>Save Changes</button>
+                    <button id="server-change-reset" onClick={this.handleReset}>Reset</button>
+                    <button id="server-change-save" onClick={this.handleSave}>Save Changes</button>
                 </div>
             </div>
             )
@@ -38,11 +38,14 @@ export default class OverviewSettings extends React.Component{
         return(
             <div className="settings-body">
                 <h5>SERVER OVERVIEW</h5>
-                <div>
-                    <label htmlFor="server-name">SERVER NAME</label>
-                    <input type="text" value={this.state.name} 
-                        onChange={e => this.setState({name: e.target.value})}
-                    />
+                <div id="server-overview-1">
+                    <div id="server-overview-1-body">
+
+                        <label htmlFor="server-name">SERVER NAME</label>
+                        <input type="text" value={this.state.name} 
+                            onChange={e => this.setState({name: e.target.value})}
+                        />
+                    </div>
                 </div>
                 {saveChanges}
             </div>

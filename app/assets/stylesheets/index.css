@@ -16,7 +16,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background:#070808;
   z-index: 10;
 }
 
@@ -32,13 +32,30 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: gray;
+  background: #36393f;
   z-index: 9;
 }
 
 .settings-modal-child {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  
+}
+
+.default-icon{
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+button:focus{
+  outline: none;
+  border: none;
+}
+
+input:focus{
+  outline: none;
 }

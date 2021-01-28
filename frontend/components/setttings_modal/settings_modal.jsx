@@ -23,7 +23,7 @@ function SettingsModal({ settingsModal, closeSettingsModal }) {
 
     return (
         <div  className="settings-modal">
-            <div className="setting-modal-child">
+            <div className="settings-modal-child">
                 {component}
             </div>
         </div>

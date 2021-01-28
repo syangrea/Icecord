@@ -1,0 +1,234 @@
+#server-landing{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+
+    #server-nav-bar{
+        display: flex;
+        flex-direction: column;
+        width: 72px;
+        height: 100%;
+        background-color: rgba(32,34,37,1);
+        align-items: center;
+        padding-top: 12px;
+
+        #nav-divider-line{
+            width: 32px;
+            height: 2px;
+            box-sizing: border-box;
+            background-color: #2d2f32;
+            margin-bottom: 8px;
+        }
+
+        li{
+            width: 48px;
+            height: 48px;
+            background-color: #36393f;
+            border-radius: 50%;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            
+            a{
+                color: #dcddde;
+                font-weight: bold;
+                
+            }
+        }
+
+        li.nav-clicked{
+            border-radius: 25%;
+            fill: white;
+            background-color: #43b581
+        }
+
+        li.nav-clicked.server-list-item-li{
+            background-color: #7289da;
+        }
+
+        li:hover{
+            border-radius: 25%;
+            fill: white;
+            background-color: #43b581
+        }
+
+        li.server-list-item-li:hover{
+            background-color: #7289da;
+        }
+
+        .nav-icon{
+            color: #43b581;
+            fill: #43b581;
+            svg{
+                height: 16px;
+                width: 16px;
+                path{
+                    height: inherit;
+                    width: inherit;
+                }
+            }
+        }
+
+        #compass-icon{
+            a{
+                svg{
+                    fill: #43b581;
+                    height: 20px;
+                    width: 20px;
+                    path{
+                        fill: #43b581;
+                        height: 24px;
+                        width: 24px;
+                    }
+                }
+            }
+        }
+
+        #compass-icon.nav-clicked{
+            svg{
+                path{
+                    fill: white;
+                }
+            }
+        }
+
+        #compass-icon:hover{
+            svg{
+                path{
+                    fill: white;
+                }
+            }
+        }
+
+        #server-home-icon:hover{
+            background-color: #7289da;
+        }
+
+    }
+
+    #name-settings{
+        width: 224px;
+        height: 52px;
+        margin-bottom: 0px;
+        padding-left: 8px;
+        padding-right: 8px;
+        position: absolute;
+        bottom: 0px;
+        left: 69px;
+        background-color: rgba(41,43,47,1);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+
+        #user-box-info{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 84px;
+            color: white;
+            
+            div{
+                font-size: 14px;
+                height: 18px;
+                display: flex;
+                align-items: flex-end;
+                font-weight: bold;
+            }
+            div:nth-child(2){
+                font-size: 12px;
+                height: 13px;
+                font-weight: normal;
+                color: #8e9297;
+            }
+        }
+
+        #user-box-icon-container{
+            width: 32px;
+            height: 32px;
+            background-color: rgba(240,71,71,1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+
+            img{
+                height: 24px;
+                width: 24px;
+            }
+        }
+
+        button{
+            
+            width: 32px;
+            height: 32px;
+            background-color: #292b2f;
+            box-shadow: none;
+            -webkit-appearance: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            img{
+                width: 22px;
+                height: 22px;
+                color: black;
+                // background-color: white;
+            }
+        }
+
+        button:hover{
+            background-color: rgba(53,56,62,1);
+            border-radius: 5px;
+        }
+    }
+
+
+    .react-contextmenu{
+        background-color: #18191c;
+        width: 188px;
+        padding: 6px 8px 6px 8px;
+        color: #b9bbbe;
+        font-size: 14px;
+        border-radius: 5px;
+
+        .react-contextmenu-item{
+            height: 20px;
+            padding: 6px 8px 6px 8px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            div{
+                height: 18px;
+            }
+        }
+
+        .react-contextmenu-item:hover{
+            background-color: #7289da;
+            border-radius: 5px;
+
+            .invite-people-menu-item{
+                color: white;
+            }
+
+           
+        }
+
+        .leave-server-menu-item.react-contextmenu-item:hover{
+            background-color: #f04747;
+            color: white;
+        }
+
+        
+    }
+
+}
+

@@ -3,13 +3,14 @@ import { openModal } from '../../../actions/modal_action';
 import ServerListItem from './server_list_item';
 import {openSettingsModal} from '../../../actions/settings_modal_action';
 
-import { serverClick } from '../../../actions/filter_actions';
+import { landingNavClick, serverClick } from '../../../actions/filter_actions';
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     return {
-        isOwner: ownProps.server.ownerId === state.session.id
+        isOwner: ownProps.server.ownerId === state.session.id,
+        isNavClicked: ownProps.server.id === state.ui.filters.landingNavClicked
         
     }
 }
@@ -26,6 +27,10 @@ const mDTP = dispatch => {
         },
         serverClick: (serverId) => {
             return dispatch(serverClick(serverId));
+        },
+
+        landingNavClick: id => {
+            return dispatch(landingNavClick(id))
         }
         
     }

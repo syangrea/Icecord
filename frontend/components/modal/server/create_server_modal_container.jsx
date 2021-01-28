@@ -14,7 +14,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         addServerModal: (
-            <button onClick={() => dispatch(openModal('addServer'))}>
+            <button className="server-modal-back" onClick={() => dispatch(openModal('addServer'))}>
                 Back
             </button>
         ),

@@ -99,6 +99,7 @@
                 color: white;
                 font-weight: 600;
                 background-color: #7289da;
+                cursor: pointer;
             }
 
             button:hover{
@@ -165,11 +166,28 @@
             height: 344px;
             justify-content: center;
             align-items: center;
+            
             button{
                 width: 176px;
                 height: 176px;
                 margin-bottom: 32px;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: #7289da;
+                font-weight: bold;
+                font-size: 20px;
+                border: none;
+                outline: none;
+                color: white;
             }
+
+            button:hover{
+                background-color: rgba(103,123,196,1);
+            }
+            button:active{
+                background-color: #5b7eae;
+            }
+
             h2{
                 margin-bottom: 8px;
             }
@@ -276,15 +294,15 @@
                     li:hover{
                         background-color: rgba(32,34,37,0.5);
                     }
-                    display: none;
+                    
                     
                 }
 
-                input:focus ~ .dob-dropdown{
-                    display: block;
-                    transition-delay: 2s;
-                    transition-duration: 2s;
-                }
+                // input:focus ~ .dob-dropdown{
+                //     display: block;
+                //     transition-delay: 2s;
+                //     transition-duration: 2s;
+                // }
 
                 #dob-month-options{
                     width: 150px;

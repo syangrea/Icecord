@@ -5,7 +5,7 @@ export default class ServerList extends React.Component{
 
     constructor(props){
         super(props);
-
+        
     }
 
     render(){

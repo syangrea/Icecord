@@ -5,8 +5,8 @@ export default class ChannelList extends React.Component{
 
     render(){
         return(
-            <div>
-                Channel list
+            <div id="channel-list">
+                <h5>Channels</h5>
             </div>
         )
     }

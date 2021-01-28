@@ -15,12 +15,17 @@ const mDTP = dispatch => {
         closeModal: () => dispatch(closeModal()),
         createServerModal: (
             <button onClick={() => dispatch(openModal('createServer'))}>
-                Create My Own
+                <div>
+                    <img id="create-server-icon" src="https://discord.com/assets/79516499036b21acd5f56ccba0635c38.svg" alt=""/>
+                    <span>Create My Own</span>
+                    <img className="continue-arrowhead" src="https://discord.com/assets/69a0ea5dbf79a129c81a0cb171b60b7a.svg" alt=""/>
+                </div>
+                
             </button>
         ),
         joinServerModal: (
             <button onClick={() => dispatch(openModal('joinServer'))}>
-                Join a server
+                <div>Join a server</div>
             </button>
         )
     }

@@ -34,6 +34,10 @@
                     
                 }
 
+                a:hover{
+                    color: #7289da;
+                   box-shadow: 0px 0px 5px 1px blue;
+                }
                
                 
             }
@@ -80,10 +84,20 @@
                     color: white;
                 }
 
+                a:hover{
+                    background-color: #36393f;
+                    box-shadow: 0px 0px 5px 1px #36393f;
+                }
+
                 a:first-child{
                     background-color: white;
                     color: black;
                     margin: 24px 24px 0 0;
+                }
+
+                a:first-child:hover{
+                    color: #7289da;
+                    box-shadow: 0px 0px 5px 1px blue;
                 }
                 
             }
@@ -345,6 +359,10 @@
 
                 color: white;
                 background-color: #7289da;
+            }
+
+            a:hover{
+                background-color: #8ea1e1;
             }
         }
     }

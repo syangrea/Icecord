@@ -9,7 +9,7 @@ export default class ServerListItem extends React.Component{
         super(props);
         // this.handleInvite = this.handleInvite.bind(this);
         this.handleContextClick = this.handleContextClick.bind(this)
-        debugger
+        // debugger
     }
  
     
@@ -41,32 +41,43 @@ export default class ServerListItem extends React.Component{
     //     this.props.openModal("invitePeople");
     // }
 
+    handleNavClick(id) {
+        return e => {
+            return this.props.landingNavClick(id);
+        }
+    }
 
     render(){
-        debugger
+        // debugger
         return (
-            <li>
+            <div>
                 <ContextMenuTrigger id={`server-nav-context-menu-${this.props.server.id}`}>
-    
-                    <div className="server-list-item">
-                        <Link to={`/server/${this.props.server.id}`}>{this.props.server.name.slice(0,2)}</Link>
-                        
-                    </div>
+                    <li onClick={this.handleNavClick(this.props.server.id)} 
+                        className={`server-list-item-li ${this.props.isNavClicked ? "nav-clicked" : null}`}>
+                        <div className="server-list-item">
+                            <Link to={`/server/${this.props.server.id}`}>{this.props.server.name.slice(0,2)}</Link>
+                            
+                        </div>
+
+                    </li>
                     
                 </ContextMenuTrigger>
 
                 <ContextMenu id={`server-nav-context-menu-${this.props.server.id}`}>
                     <MenuItem onClick={this.handleContextClick("invitePeople")}>
-                        Invite People
+                        <div className="invite-people-menu-item">
+                            Invite People
+                        </div>
+                        
                     </MenuItem>
                     {this.props.isOwner ? <MenuItem onClick={this.handleContextClick("server")}>
-                        Server Settings
+                        <div>Server Settings</div>
                     </MenuItem> : null}
-                    {!this.props.isOwner ? <MenuItem onClick={this.handleContextClick("leaveServer")}>
-                        Leave Server
+                    {!this.props.isOwner ? <MenuItem className="leave-server-menu-item" onClick={this.handleContextClick("leaveServer")}>
+                        <div >Leave Server</div>
                     </MenuItem> : null}
                 </ContextMenu>
-            </li>
+            </div>
 
         )
     }

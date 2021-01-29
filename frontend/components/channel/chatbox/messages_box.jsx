@@ -20,7 +20,7 @@ export default class MessagesBox extends React.Component{
             {
                 received: data => {
                     // debugger
-                    let parsedData = $.parseJSON(data.data)
+                    let parsedData = $.parseJSON(data.data);
                     // 
                     switch(data.type){
                         case 'SENT_MESSAGE':

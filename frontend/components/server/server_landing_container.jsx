@@ -9,7 +9,7 @@ import { landingNavClick } from '../../actions/filter_actions';
 
 const mSTP = state => {
     return {
-        user: state.entities.users[state.session.id],
+        user: state.entities.users[state.session[id]],
         navClicked: state.ui.filters.landingNavClicked
 
     }

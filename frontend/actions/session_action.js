@@ -45,7 +45,7 @@ export const login = formUser => dispatch => {
     return SessionAPIUtil.login(formUser)
                 .then(res => dispatch(receiveCurrentUser(res)))
                 .fail(res => {
-                    dispatch(receiveErrors($.parseJSON(res.responseText)));
+                    return dispatch(receiveErrors($.parseJSON(res.responseText)));
                     
                 });
 }

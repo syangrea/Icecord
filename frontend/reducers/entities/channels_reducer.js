@@ -1,4 +1,4 @@
-import {LOGOUT_CURRENT_USER} from '../../actions/session_action'
+import {LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER} from '../../actions/session_action'
 import { RECEIVE_SERVER, REMOVE_SERVER, REMOVE_USER_SERVER } from '../../actions/server_action';
 
 const ChannelsReducer = (state = {}, action) => {
@@ -25,6 +25,8 @@ const ChannelsReducer = (state = {}, action) => {
             }
             
             return co;
+        case RECEIVE_CURRENT_USER:
+            return Object.assign({}, action.payload.channels)
         case LOGOUT_CURRENT_USER:
             return {}
         default:

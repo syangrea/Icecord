@@ -11,7 +11,7 @@ export default class ChannelList extends React.Component{
                 <ul>
                     {
                         this.props.channels.map((channel,idx) => {
-                            return <ChannelListItemContainer channel={channel} key={idx}/>
+                            return <ChannelListItemContainer server={this.props.server} channel={channel} key={idx}/>
                         })
                     }
                 </ul>

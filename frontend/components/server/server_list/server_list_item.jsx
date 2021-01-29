@@ -9,15 +9,15 @@ export default class ServerListItem extends React.Component{
         super(props);
         // this.handleInvite = this.handleInvite.bind(this);
         this.handleContextClick = this.handleContextClick.bind(this)
-        // debugger
+        // 
     }
  
     
 
     handleContextClick(modalToOpen){
-        // debugger
+        // 
         return e => {
-            // debugger
+            // 
             this.props.serverClick(this.props.server.id);
             switch(modalToOpen){
                 case 'server':
@@ -37,7 +37,7 @@ export default class ServerListItem extends React.Component{
     }
 
     // handleInvite(e){
-    //     debugger
+    //     
     //     this.props.openModal("invitePeople");
     // }
 
@@ -48,6 +48,7 @@ export default class ServerListItem extends React.Component{
     }
 
     render(){
+        // 
         // debugger
         return (
             <div>
@@ -55,7 +56,9 @@ export default class ServerListItem extends React.Component{
                     <li onClick={this.handleNavClick(this.props.server.id)} 
                         className={`server-list-item-li ${this.props.isNavClicked ? "nav-clicked" : null}`}>
                         <div className="server-list-item">
-                            <Link to={`/server/${this.props.server.id}`}>{this.props.server.name.slice(0,2)}</Link>
+                            <Link to={`/server/${this.props.server.id}/channel/${this.props.defaultChannel.id}`}>
+                                {this.props.server.name.slice(0,2)}
+                            </Link>
                             
                         </div>
 

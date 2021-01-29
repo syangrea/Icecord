@@ -36,9 +36,9 @@ export default class SignupForm extends React.Component{
     }
 
     handleSelectOption(field){
-        // debugger
+        // 
         return (e) => {
-            // debugger
+            // 
             return this.setState({[field]: e.target.innerText});
         }
     }
@@ -124,7 +124,7 @@ export default class SignupForm extends React.Component{
                                         
                                         <ul>
                                             {monthArr.map((month,idx) => {
-                                                // debugger
+                                                // 
                                                 return <li onMouseDown={this.handleSelectOption('dobMonth')} key={idx} value="">{month}</li>
                                             })}
                                         </ul>

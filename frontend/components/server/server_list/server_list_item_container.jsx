@@ -10,7 +10,10 @@ const mSTP = (state, ownProps) => {
     // debugger
     return {
         isOwner: ownProps.server.ownerId === state.session.id,
-        isNavClicked: ownProps.server.id === state.ui.filters.landingNavClicked
+        isNavClicked: ownProps.server.id === state.ui.filters.landingNavClicked,
+        defaultChannel: Object.values(state.entities.channels).filter(channel => {
+            return channel.serverId === ownProps.server.id
+        })[0]
         
     }
 }

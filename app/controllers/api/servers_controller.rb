@@ -15,21 +15,21 @@ class Api::ServersController < ApplicationController
     end
 
     def update
-        # debugger
+        # 
         @server = Server.find(params[:id])
-        # debugger
+        # 
         if @server.update(server_params)
             render :show
         else
-            # debugger
+            # 
             render json: @server.errors.full_messages, status: 422
         end
     end
 
     def destroy
-        # debugger
+        # 
         @server = Server.find_by(id: params[:id])
-        # debugger
+        # 
         if @server
             @server.destroy
             render json: {}

@@ -4,13 +4,16 @@ import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_action';
 import { openSettingsModal } from '../../actions/settings_modal_action';
 import { serverClick } from '../../actions/filter_actions';
+import { getChannelsInServer } from '../../utils/channel_util';
 
 
 
 const mSTP = (state,ownProps) => {
+    // debugger
     return {
         server: state.entities.servers[ownProps.match.params.serverId],
-        isOwner: state.entities.servers[ownProps.match.params.serverId].ownerId === state.session.id
+        isOwner: state.entities.servers[ownProps.match.params.serverId].ownerId === state.session.id,
+        channels: getChannelsInServer(state, parseInt(ownProps.match.params.serverId))
         
     }
 }

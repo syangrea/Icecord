@@ -18,6 +18,9 @@ const App = props => {
                 <AuthRoute path="/signup" component={SignupFormContainer}/>
                 <AuthRoute exact path="/" component={Landing}/>
                 <ProtectedRoute path="/server" component={ServerLandingContainer}/>
+                
+            
+            
             
 
             

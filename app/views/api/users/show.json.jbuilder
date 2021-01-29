@@ -13,3 +13,7 @@ json.user_servers do
     json.partial! 'api/users/user_servers', user: @user
 
 end
+
+json.channels do
+    json.partial! 'api/users/channels', user: @user
+end

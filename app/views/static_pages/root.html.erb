@@ -14,6 +14,11 @@
             "api/users/user_servers.json.jbuilder",
             user: current_user
         ).html_safe %>
+
+        window.channels = <%= render(
+            "api/users/channels.json.jbuilder",
+            user: current_user
+        ).html_safe %>
     </script>
 <% end %>
 

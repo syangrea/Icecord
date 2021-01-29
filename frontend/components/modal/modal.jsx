@@ -10,9 +10,9 @@ import DeleteServerModalContainer from './server/delete_server_modal_container';
 import LogoutModalContainer from './user/logout_modal_container'
 
 function Modal({modal, closeModal}){
-    // debugger
+    // 
     if(!modal){
-        // debugger
+        // 
         return null;
     }
 
@@ -25,7 +25,7 @@ function Modal({modal, closeModal}){
             component = <InviteModalContainer />;
             break;
         case 'addServer':
-            // debugger
+            // 
             component = <AddServerModalContainer />;
             break;
         case 'createServer':
@@ -43,7 +43,7 @@ function Modal({modal, closeModal}){
         default:
             return null;
     }
-    // debugger
+    // 
 
     return (
         <div className="modal-background" onClick={closeModal} onClick={e => e.stopPropagation()}>
@@ -56,7 +56,7 @@ function Modal({modal, closeModal}){
 
 
 const mSTP = state => {
-    // debugger
+    // 
     return {
         modal: state.ui.modal
     }

@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     [window.currentUser.id]: currentUser
                  },
                  servers: window.servers,
-                 userServers: window.userServers
+                 userServers: window.userServers,
+                 channels: window.channels
                  
             },
             session: {

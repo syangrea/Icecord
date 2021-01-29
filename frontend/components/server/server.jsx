@@ -2,6 +2,8 @@ import React from 'react';
 import ChannelListContainer from '../channel/channel_list_container';
 import ServerMemberListContainer from './server_member_list/server_member_list_container';
 import { ContextMenuTrigger, MenuItem, ContextMenu } from 'react-contextmenu';
+import MessagesBoxContainer from '../channel/chatbox/messages_box_container';
+import { Route } from 'react-router-dom';
 
 export default class Server extends React.Component{
 
@@ -13,7 +15,8 @@ export default class Server extends React.Component{
 
     componentDidMount(){
         // debugger
-        return this.props.fetchServer(this.props.match.params.serverId);
+        return this.props.fetchServer(this.props.match.params.serverId)
+            .then(() => this.props.history.push(`/server/${this.props.match.params.serverId}/channel/${this.props.channels[0].id}`));
     }
 
     componentDidUpdate(oldProps){
@@ -46,6 +49,7 @@ export default class Server extends React.Component{
 
 
     render(){
+        // debugger
         return (
             <div id="server">
                 <div id="server-header">
@@ -80,7 +84,8 @@ export default class Server extends React.Component{
                 <div id="server-body">
 
                     <ChannelListContainer server={this.props.server}/>
-                    <div id="channel-messages">Messages</div>
+                    <Route path="/server/:serverId/channel/:channelId" component={MessagesBoxContainer} />
+                  
                     <ServerMemberListContainer />
                 </div>
             </div>

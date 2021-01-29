@@ -66,7 +66,7 @@ export default class ServerLanding extends React.Component{
                         
                     <div id="user-box-info">
                         <div><p>{this.props.user.username}</p></div>
-                        <div>{`#${this.props.user.id}`}</div>
+                        <div>{`#${this.props.user ? this.props.user.id : null}`}</div>
                     </div>
                     {this.props.userSettingsModal}
                 </div>

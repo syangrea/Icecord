@@ -64,7 +64,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "Icecord_#{Rails.env}"
 
   config.action_cable.url = 'wss://icecord.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = [ 'http://icecord.herokuapp.com/', /http://icecord.*/ ]
+  config.action_cable.allowed_request_origins = [ 'http://icecord.herokuapp.com/', '/http://icecord.*/' ]
 
   config.action_mailer.perform_caching = false
 

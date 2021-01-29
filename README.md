@@ -26,7 +26,7 @@ These thumbnails open up each server's list of channels, list of members, and a 
 ### Live Chat
 This means that users can receive messages and have it show up on the page without having to refresh. This was implemented with Rails ActionCable, the framework's WebSocket approach. What this allows me to do is to use WebSockets instead of classic HTTP Requests, to open a "channel" between clients and the server. The channel automatically broadcasts to clients, any changes that happen in the backend - someone somewhere else sent a message.
 
-[logo]: https://github.com/syangrea/Icecord/blob/main/readme_images/discord_chat.png "chat"
+![chat-image-here](https://github.com/syangrea/Icecord/blob/main/readme_images/discord_chat.png "chat")
 
 ##### Future Features
 * Direct Messaging

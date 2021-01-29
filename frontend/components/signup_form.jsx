@@ -22,8 +22,14 @@ export default class SignupForm extends React.Component{
 
     update(field){
         return e => {
-            e.preventDefault();
+            this.setState({[field]: e.target.value})
             
+        }
+    }
+
+    preventUpdate(){
+        return e=> {
+            e.preventDefault();
         }
     }
 
@@ -111,7 +117,7 @@ export default class SignupForm extends React.Component{
                                 <div className="dob-dropdown-label">
                                     <input id="month-input" type="text" 
                                         value={this.state.dobMonth} 
-                                        onChange={this.update('dobMonth')} 
+                                        onChange={this.preventUpdate()} 
                                         onFocus={this.handleShow('Month')}
                                         ref={el => this.monthInput = el}
                                         onBlur={this.handleBlur('Month')}
@@ -137,7 +143,7 @@ export default class SignupForm extends React.Component{
                             <div id="dob-day" className="dob-select">
                                 <div className="dob-dropdown-label" >
                                     <input type="text" 
-                                        onChange={this.update('dobDay')} 
+                                        onChange={this.preventUpdate()} 
                                         value={this.state.dobDay}
                                         onFocus={this.handleShow('Day')}
                                         ref={el => this.dayInput = el}
@@ -163,7 +169,7 @@ export default class SignupForm extends React.Component{
                                 <div className="dob-dropdown-label">
                                     <input type="text" 
                                         value={this.state.dobYear}
-                                        onChange={this.update('dobYear')}
+                                        onChange={this.preventUpdate()}
                                         onFocus={this.handleShow('Year')}
                                         ref={el => this.yearInput = el}
                                         onBlur={this.handleBlur('Year')}

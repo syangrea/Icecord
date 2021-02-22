@@ -1,11 +1,19 @@
 json.key_format! camelize: :lower
 
-@channel.messages.each do |message|
+json.channel do
+    json.extract! @channel, :id, :name, :server_id, :creator_id  
+end
 
-    json.set! message.id do 
 
-        json.extract! message, :body, :user_id, :channel_id
+json.messages do
 
+    @channel.messages.each do |message|
+    
+        json.set! message.id do 
+    
+            json.extract! message, :body, :user_id, :channel_id
+    
+        end
+    
     end
-
 end

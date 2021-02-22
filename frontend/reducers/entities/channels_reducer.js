@@ -1,5 +1,6 @@
 import {LOGOUT_CURRENT_USER, RECEIVE_CURRENT_USER} from '../../actions/session_action'
 import { RECEIVE_SERVER, REMOVE_SERVER, REMOVE_USER_SERVER } from '../../actions/server_action';
+import { RECEIVE_CHANNEL, REMOVE_CHANNEL } from '../../actions/channel_actions';
 
 const ChannelsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -25,6 +26,12 @@ const ChannelsReducer = (state = {}, action) => {
             }
             
             return co;
+        case RECEIVE_CHANNEL:
+            return Object.assign({}, state, {[action.payload.channel.id] : action.payload.channel})
+        case REMOVE_CHANNEL:
+            let copy = Object.assign({},state);
+            delete copy[action.channelId];
+            return copy;
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, action.payload.channels)
         case LOGOUT_CURRENT_USER:

@@ -21,7 +21,7 @@ export const receiveMessages = messages => {
 export const fetchMessages = channelId => dispatch => {
     return ChannelAPIUtil.fetchMessages(channelId)
         .then(payload => {
-            dispatch(receiveMessages(payload))
+            dispatch(receiveMessages(payload.messages))
         })
 }
 

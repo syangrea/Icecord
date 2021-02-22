@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { closeSettingsModal } from '../../actions/settings_modal_action';
 import ServerSettingsModalContainer from './server/server_settings_modal_container'
 import UserSettingsModalContainer from './user/user_settings_modal_container'
+import ChannelSettingsModal from './channel/channel_settings_modal'
 
 function SettingsModal({ settingsModal, closeSettingsModal }) {
     if (!settingsModal) {
@@ -16,6 +17,9 @@ function SettingsModal({ settingsModal, closeSettingsModal }) {
             break;
         case 'server':
             component = <ServerSettingsModalContainer />;
+            break;
+        case 'channel':
+            component = <ChannelSettingsModal />
             break;
         default:
             return null;

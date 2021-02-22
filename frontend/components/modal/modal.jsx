@@ -8,6 +8,8 @@ import CreateServerModalContainer from './server/create_server_modal_container';
 import JoinServerModalContainer from './server/join_server_modal_container';
 import DeleteServerModalContainer from './server/delete_server_modal_container';
 import LogoutModalContainer from './user/logout_modal_container'
+import CreateChannel from './channel/create_channel';
+import DeleteChannel from './channel/delete_channel';
 
 function Modal({modal, closeModal}){
     // 
@@ -39,6 +41,12 @@ function Modal({modal, closeModal}){
             break;
         case 'logout':
             component = <LogoutModalContainer />;
+            break;
+        case 'createChannel':
+            component = <CreateChannel/>;
+            break;
+        case 'deleteChannel':
+            component = <DeleteChannel/>;
             break;
         default:
             return null;

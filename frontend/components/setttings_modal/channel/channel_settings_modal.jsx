@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { openModal } from '../../../actions/modal_action';
+import { closeSettingsModal } from '../../../actions/settings_modal_action';
 import ChannelOverviewSettings from './channel_overview_settings';
  
 class ChannelSettingsModal extends React.Component{
@@ -62,7 +64,7 @@ class ChannelSettingsModal extends React.Component{
 
 const mSTP = (state,ownProps) => {
     return {
-        channel: state.entities.channels[state.filters.channelClicked],
+        channel: state.entities.channels[state.ui.filters.channelClicked],
         user: state.entities.users[state.session.id]
     }
 }

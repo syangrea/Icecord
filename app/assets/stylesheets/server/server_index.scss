@@ -8,6 +8,7 @@
 
     #server-nav-bar{
         display: flex;
+        flex: 1 0 72px;
         flex-direction: column;
         width: 72px;
         height: 100%;
@@ -119,7 +120,7 @@
         padding-right: 8px;
         position: absolute;
         bottom: 0px;
-        left: 69px;
+        left: 72px;
         background-color: rgba(41,43,47,1);
         display: flex;
         justify-content: flex-start;

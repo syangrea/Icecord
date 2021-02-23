@@ -12,7 +12,7 @@
         border-bottom: 1px black solid;
         #server-name-server-page{
             box-sizing: border-box;
-            flex: 0 0 240px;
+            width: 240px;
             padding: 0 16px 0 16px;
             display: flex;
             align-items: center;
@@ -69,13 +69,38 @@
 
         #channel-list{
             box-sizing: border-box;
-            flex: 0 0 240px;
+            flex: 1 0 240px;
             padding-top: 16px;
-            padding-left: 14px;
+            padding-left: 10px;
+            padding-right: 10px;
             display: flex;
             flex-direction: column;
             background-color: #2f3136;
             
+            .channel-type-container{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .text-channel-header{
+                    display: flex;
+                    align-items: center;
+                    
+                    svg{
+                        margin-right: 2px;
+                        width: 9px;
+                        fill: #8e9297;
+                        
+                    }
+                }
+                .add-channel-modal-button{
+                    svg{
+                        fill: #8e9297;
+                        width: 12px;
+                        height: 12px;
+                        margin-right: 10px;
+                    }
+                }
+            }
             
         }
 

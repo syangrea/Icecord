@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { channelClick } from "../../actions/filter_actions"
+import { channelClick, setCurrentChannel } from "../../actions/filter_actions"
 import { openModal } from "../../actions/modal_action"
 import { openSettingsModal } from "../../actions/settings_modal_action"
 import ChannelListItem from './channel_list_item'
@@ -7,7 +7,8 @@ import ChannelListItem from './channel_list_item'
 
 const mSTP = (state,ownProps) => {
     return {
-        isOwner: state.session.id === ownProps.server.ownerId
+        isOwner: state.session.id === ownProps.server.ownerId,
+        isCurrentChannel: state.ui.filters.currentChannel === ownProps.channel.id
     }
 }
 const mDTP = dispatch => {
@@ -20,6 +21,9 @@ const mDTP = dispatch => {
         },
         channelClick: channelId => {
             return dispatch(channelClick(channelId));
+        },
+        setCurrentChannel: channelId => {
+            return dispatch(setCurrentChannel(channelId))
         }
     }
 }

@@ -76,7 +76,7 @@ export default class Server extends React.Component{
                     </ContextMenu>
                     
                     <div id="server-channel-name-server-page">
-                        <img src="https://img.icons8.com/offices/30/000000/hashtag.png" />
+                        <i className="fas fa-hashtag hashtag-symbol"></i>                          
                         <span>general</span>
                     </div>
                     

@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { updateChannel } from '../../../actions/channel_actions';
+import { closeSettingsModal } from '../../../actions/settings_modal_action';
 
 class ChannelOverviewSettings extends React.Component{
 
@@ -8,9 +10,20 @@ class ChannelOverviewSettings extends React.Component{
         this.state = {
             name: this.props.channel.name
         }
+        this.handleReset = this.handleReset.bind(this);
+        this.handleSave = this.handleSave.bind(this);
     }
 
+    handleReset(e){
+        this.setState({name: this.props.channel.name})
+    }
 
+    handleSave(e){
+        let newChannel = Object.assign({}, this.props.channel, this.state);
+        debugger
+        this.props.updateChannel(newChannel)
+            
+    }
 
     render(){
         let saveChanges = null;
@@ -55,7 +68,12 @@ const mSTP = (state,ownProps) => {
 
 const mDTP = dispatch => {
     return {
-
+        closeSettingsModal: () => {
+            return dispatch(closeSettingsModal())
+        },
+        updateChannel: channel => {
+            return dispatch(updateChannel(channel))
+        }
     }
 }
 

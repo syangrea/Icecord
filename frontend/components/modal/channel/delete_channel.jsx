@@ -27,7 +27,7 @@ class DeleteChannel extends React.Component{
                 
                 <div className="modal-body" id="delete-modal-body">
                     <span>
-                        Are you sure you want to delete {this.props.server.name} ?
+                        Are you sure you want to delete {this.props.channel.name} ?
                         This cannot be undone
                     </span>
                 </div>
@@ -60,7 +60,7 @@ class DeleteChannel extends React.Component{
 const mSTP = (state, ownProps) => {
     return {
         
-        channel: state.entities.channel[state.ui.filters.channelClicked]
+        channel: state.entities.channels[state.ui.filters.channelClicked]
         
     }
 }

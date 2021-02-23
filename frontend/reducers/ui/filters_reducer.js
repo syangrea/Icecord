@@ -1,4 +1,4 @@
-import {CHANNEL_CLICK, LANDING_NAV_CLICK, SERVER_CLICK} from '../../actions/filter_actions';
+import {CHANNEL_CLICK, LANDING_NAV_CLICK, SERVER_CLICK, SET_CURRENT_CHANNEL} from '../../actions/filter_actions';
 import { CLOSE_MODAL } from '../../actions/modal_action';
 import { REMOVE_SERVER, REMOVE_USER_SERVER } from '../../actions/server_action';
 import { CLOSE_SETTINGS_MODAL } from '../../actions/settings_modal_action';
@@ -10,6 +10,8 @@ const filtersReducer = (state = {serverClicked: null, landingNavClicked: null}, 
             return Object.assign({}, state, {serverClicked: action.serverId})
         case LANDING_NAV_CLICK:
             return Object.assign({}, state, { landingNavClicked: action.id })
+        case SET_CURRENT_CHANNEL:
+            return Object.assign({}, state, { currentChannel: action.channelId })
         case CHANNEL_CLICK:
             return Object.assign({}, state, {channelClicked: action.channelId})
         case CLOSE_SETTINGS_MODAL:

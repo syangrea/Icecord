@@ -5,7 +5,7 @@ export default class ChannelList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            showTextChannels: false
+            showTextChannels: true
         }
         this.toggleShowTextChannels = this.toggleShowTextChannels.bind(this);
 

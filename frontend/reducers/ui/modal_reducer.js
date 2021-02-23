@@ -1,3 +1,4 @@
+import { REMOVE_CHANNEL } from '../../actions/channel_actions';
 import {OPEN_MODAL, CLOSE_MODAL} from '../../actions/modal_action';
 import { RECEIVE_SERVER, REMOVE_SERVER, REMOVE_USER_SERVER } from '../../actions/server_action';
 import { LOGOUT_CURRENT_USER } from '../../actions/session_action';
@@ -12,6 +13,8 @@ const modalReducer = (state = null, action) => {
         case RECEIVE_SERVER:
             return null;
         case REMOVE_SERVER:
+            return null;
+        case REMOVE_CHANNEL:
             return null;
         case REMOVE_USER_SERVER:
             return null;

@@ -14,9 +14,9 @@ export default class DeleteServerModal extends React.Component {
     handleDelete(e){
         if(this.props.server.name !== this.state.serverName){
             this.setState({errors: true})
-            // debugger
+           
         }else{
-            // debugger
+           
             this.props.deleteServer(this.props.server.id)
         }
     }

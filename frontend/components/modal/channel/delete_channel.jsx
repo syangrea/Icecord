@@ -26,7 +26,7 @@ class DeleteChannel extends React.Component{
                 </div>
                 
                 <div className="modal-body" id="delete-modal-body">
-                    <span>
+                    <span id="channel-delete-span">
                         Are you sure you want to delete {this.props.channel.name} ?
                         This cannot be undone
                     </span>

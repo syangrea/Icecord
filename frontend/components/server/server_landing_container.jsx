@@ -8,7 +8,7 @@ import {openSettingsModal} from '../../actions/settings_modal_action'
 import { landingNavClick } from '../../actions/filter_actions';
 
 const mSTP = state => {
-    // debugger
+    // 
     return {
         user: state.entities.users[state.session.id],
         navClicked: state.ui.filters.landingNavClicked

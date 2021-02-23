@@ -4,7 +4,7 @@ export default class LeaveServerModal extends React.Component{
     
 
     render(){
-        // debugger
+        // 
         return(
             <div id="leave-server">
                 <div className="modal-header" id="leave-modal-header">

@@ -20,7 +20,7 @@ class ChannelOverviewSettings extends React.Component{
 
     handleSave(e){
         let newChannel = Object.assign({}, this.props.channel, this.state);
-        debugger
+        
         this.props.updateChannel(newChannel)
             
     }

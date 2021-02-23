@@ -7,7 +7,7 @@ const Auth = ({exact, path, loggedIn, component: Component}) => {
         <Route path={path}
             exact={exact}
             render={props => {
-                // debugger
+                // 
                 return loggedIn ? <Redirect to="/server/home"/> : <Component {...props}/>
             }}
         />

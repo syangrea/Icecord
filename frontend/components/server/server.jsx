@@ -14,7 +14,7 @@ export default class Server extends React.Component{
     }
 
     componentDidMount(){
-        // debugger
+        
         return this.props.fetchServer(this.props.match.params.serverId)
             .then(() => this.props.history.push(`/server/${this.props.match.params.serverId}/channel/${this.props.channels[0].id}`));
     }
@@ -26,9 +26,9 @@ export default class Server extends React.Component{
     }
 
     handleContextClick(modalToOpen) {
-        // debugger
+        
         return e => {
-            // debugger
+            
             this.props.serverClick(this.props.server.id);
             switch (modalToOpen) {
                 case 'server':
@@ -49,7 +49,7 @@ export default class Server extends React.Component{
 
 
     render(){
-        // debugger
+        
         return (
             <div id="server">
                 <div id="server-header">

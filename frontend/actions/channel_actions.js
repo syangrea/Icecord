@@ -34,11 +34,11 @@ export const createChannel = channel => dispatch => {
 export const updateChannel = channel => dispatch => {
     return ChannelAPIUtil.updateChannel(channel)
         .then(payload => {
-            debugger
+            
             return dispatch(receiveChannel(payload))
         })
         .fail(res => {
-            debugger
+            
             return dispatch(receiveChannelErrors($.parseJSON(res.responseText)))
         })
 }

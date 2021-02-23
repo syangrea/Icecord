@@ -25,7 +25,7 @@ export default class ServerLanding extends React.Component{
     }
 
     render(){
-        // debugger
+        // 
         return (
             <div id="server-landing">
                 <div id="server-nav-bar">

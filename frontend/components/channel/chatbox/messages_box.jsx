@@ -13,23 +13,23 @@ export default class MessagesBox extends React.Component{
     }
 
     componentDidMount(){
-        // debugger
+      
         
         this.subscription = App.cable.subscriptions.create(
             {channel: 'ChatChannel', id: this.props.channel.id},
             {
                 received: data => {
-                    // debugger
+                  
                     let parsedData = $.parseJSON(data.data);
                     // 
                     switch(data.type){
                         case 'SENT_MESSAGE':
-                            // debugger
+                          
                             this.props.receiveMessage(parsedData);
                             break;
                         // case 'LOAD_MESSAGES':
                         //     // 
-                        //     debugger
+                        
                         //     this.props.receiveMessages(parsedData);
                         //     break;
                     }
@@ -37,11 +37,12 @@ export default class MessagesBox extends React.Component{
                 }, 
                 sendMessage: function(message){
                     // 
+                  
                     return this.perform("sendMessage", message)
                 }
                 // ,
                 // getMessages: function(){
-                //     debugger
+                
                 //     return this.perform("getMessages")
                 // }
             }

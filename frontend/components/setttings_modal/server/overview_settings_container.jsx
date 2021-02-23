@@ -12,7 +12,7 @@ const mSTP = (state,ownProps) => {
 const mDTP = dispatch => {
     return {
         updateServer: server => {
-            // debugger
+            
             return dispatch(updateServer(server));
         }
     }

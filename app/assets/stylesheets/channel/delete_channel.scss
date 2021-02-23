@@ -1,0 +1,35 @@
+.modal-child{
+    #delete-channel{
+        box-sizing: border-box;
+        width: 495px;
+        #channel-delete-span{
+            color: #c0c2c3;
+            background: #36393f;
+        }
+
+        #delete-modal-body{
+            height: 100px;
+        }
+
+        .modal-footer#delete-modal-footer{
+            font-weight: bold;
+            .modal-cancel{
+                div{
+
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+
+            }
+            .modal-leave-delete-button{
+                font-weight: bold;
+                width: 135px;
+                height: 45px;
+                div{
+                    font-size: 14px;
+                    height: 14px;
+                }
+            }
+        }
+    }
+}

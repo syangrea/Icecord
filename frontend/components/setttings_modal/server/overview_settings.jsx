@@ -18,7 +18,7 @@ export default class OverviewSettings extends React.Component{
     }
 
     handleSave(e){
-        // debugger
+      
         this.props.updateServer(Object.assign({}, this.props.server, this.state));
     }
 

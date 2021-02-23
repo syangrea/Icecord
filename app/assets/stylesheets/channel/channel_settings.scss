@@ -1,0 +1,35 @@
+#channel-settings-modal{
+
+    .settings-body{
+
+
+        #channel-overview-1-body{
+            display: flex;
+            flex-direction: column;
+            label{
+                color: #8e9297;
+                font-size: 12px;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
+
+            input{
+                box-sizing: border-box;
+                width: 100%;
+                border-radius: 5px;
+                height: 45px;
+                padding: 10px;
+                background-color: #303339;
+                border: 1px black solid;
+                font-size: 18px;
+                color: white;
+                transition: .3s;
+            }
+
+            input:focus{
+                border: #7289da solid 1px;
+            }
+        }
+    }
+
+}

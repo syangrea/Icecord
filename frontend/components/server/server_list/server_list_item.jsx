@@ -49,7 +49,7 @@ export default class ServerListItem extends React.Component{
 
     render(){
         // 
-        // debugger
+       
         return (
             <div>
                 <ContextMenuTrigger id={`server-nav-context-menu-${this.props.server.id}`}>

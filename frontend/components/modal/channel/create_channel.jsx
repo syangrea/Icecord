@@ -42,10 +42,10 @@ class CreateChannel extends React.Component{
                 </div>
                 
                 <div id="create-channel-footer" className="add-channel-modals-footer">
-                    <div>
-                        <button onClick={() => this.props.closeModal()}>Cancel</button>
-                    </div>
-                    <button id="create-channel-button" onClick={this.handleCreate} disabled={this.state.name.length === 0}>Create</button>
+                    
+                    <button id="create-channel-cancel-button" onClick={() => this.props.closeModal()}>Cancel</button>
+                    
+                    <button id="create-channel-button" onClick={this.handleCreate} disabled={this.state.name.length === 0}><div>Create Channel</div></button>
                 </div>
             </div>
         )

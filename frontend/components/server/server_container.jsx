@@ -9,7 +9,7 @@ import { getChannelsInServer } from '../../utils/channel_util';
 
 
 const mSTP = (state,ownProps) => {
-    // debugger
+    // 
     return {
         server: state.entities.servers[ownProps.match.params.serverId],
         isOwner: state.entities.servers[ownProps.match.params.serverId].ownerId === state.session.id,

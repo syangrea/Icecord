@@ -39,3 +39,22 @@
       color: white;
     }
 }
+
+#channel-list{
+  ul{
+    div{
+      .react-contextmenu{
+   
+        .delete-channel-menu-item.react-contextmenu-item{
+          color:#f04747 ;
+        }
+        .delete-channel-menu-item.react-contextmenu-item:hover{
+            background-color: #f04747;
+            color: white;
+        }
+
+        
+    }
+    }
+  }
+}

@@ -13,7 +13,6 @@ window.ServerAction = ServerAction;
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     let store;
-    // debugger
     if(window.currentUser){
         
         const preloadedState = {

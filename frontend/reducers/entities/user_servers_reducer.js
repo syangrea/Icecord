@@ -8,11 +8,11 @@ const UserServersReducer = (state = {}, action) => {
             return Object.assign({}, state, action.payload.userServers)
         case REMOVE_SERVER:
             let c = Object.assign({},state);
-            // debugger
+            
             for(const property in c){
-                // debugger
+                
                 if(c[property].serverId === action.serverId){
-                    // debugger
+                    
                     delete c[property];
                 }
             }

@@ -7,7 +7,7 @@ import { landingNavClick, serverClick } from '../../../actions/filter_actions';
 
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    
     return {
         isOwner: ownProps.server.ownerId === state.session.id,
         isNavClicked: ownProps.server.id === state.ui.filters.landingNavClicked,
@@ -20,7 +20,7 @@ const mSTP = (state, ownProps) => {
 
 
 const mDTP = dispatch => {
-    // debugger
+    
     return {
         openModal: modalName => {
             return dispatch(openModal(modalName))

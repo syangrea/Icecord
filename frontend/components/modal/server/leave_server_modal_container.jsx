@@ -15,7 +15,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
           leaveServer: userServer => {
-            //   debugger
+            
               return dispatch(leaveServer(userServer));
           },
           closeModal: () => {

@@ -35,7 +35,7 @@ export default class ChannelList extends React.Component{
                 <div className="channel-type-container" >
                     <div className="text-channel-header" onClick={this.toggleShowTextChannels}>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg>
+                        <svg className={this.state.showTextChannels ? "opened-channels" : null} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg>
                         <h5>Text Channels</h5>
                     </div>
                     <div className="add-channel-modal-button" onClick={e => this.props.openModal("createChannel")}>

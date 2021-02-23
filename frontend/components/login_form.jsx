@@ -20,12 +20,12 @@ export default class LoginForm extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
+        
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
+        
         this.props.login(this.state)
         //auth route automatically redirects to server when logged in for now
         //here might want to push exact server info or such later to history

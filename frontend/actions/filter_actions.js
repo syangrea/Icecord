@@ -2,6 +2,7 @@ export const SERVER_CLICK = "SERVER_CLICK";
 export const LANDING_NAV_CLICK = "LANDING_NAV_CLICK"
 export const CHANNEL_CLICK = "CHANNEL_CLICK"
 export const SET_CURRENT_CHANNEL = "SET_CURRENT_CHANNEL"
+export const SET_CURRENT_DM_USER_ID = "SET_CURRENT_DM_USER_ID";
 
 export const serverClick = serverId => {
     return {
@@ -28,5 +29,12 @@ export const setCurrentChannel = channelId => {
     return {
         type: SET_CURRENT_CHANNEL,
         channelId
+    }
+}
+
+export const setCurrentDMUserId = userId => {
+    return {
+        type: SET_CURRENT_DM_USER_ID,
+        userId
     }
 }

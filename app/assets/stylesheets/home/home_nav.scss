@@ -1,0 +1,40 @@
+#home-header{
+    box-sizing: border-box;
+    
+    box-shadow: -3px 4px 5px -5px black;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    #home-nav-header{
+        box-sizing: border-box;
+        height: 100%;
+        flex: 1 0 240px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2f3136;
+        input{
+            box-sizing: border-box;
+            background-color: #202225;
+            border-radius: 5px;
+            width: 220px;
+            height: 28px;
+            padding: 1px 6px;
+            color: white;
+            outline: none;
+            border: none;
+        }
+    }
+
+    #home-body-header{
+        box-sizing: border-box;
+        height: 48px;
+        width: 100%;
+        color: white;
+        background-color: #36393f;
+    }
+    
+}

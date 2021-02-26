@@ -8,7 +8,8 @@ import JoinServerModal from './join_server_modal';
 
 const mSTP = (state, ownProps) => {
     return {
-        errors: state.errors.server
+        errors: state.errors.server,
+        currentUserId: state.session.id
     }
 }
 
@@ -22,8 +23,8 @@ const mDTP = dispatch => {
         closeModal: () => {
             return dispatch(closeModal())
         },
-        joinServer: link => {
-            return dispatch(joinServer(link));
+        joinServer: (link,id) => {
+            return dispatch(joinServer(link,id));
         }
     }
 }

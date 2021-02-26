@@ -5,7 +5,7 @@ class Api::UserServersController < ApplicationController
         # 
         if @server
             # 
-            user_server = UserServer.new(user_id: current_user.id, server_id: @server.id)
+            user_server = UserServer.new(user_id: params.transform_keys(&:underscore)[:user_server][:id], server_id: @server.id)
             if user_server.save
                 # 
                 render template: '/api/servers/show'

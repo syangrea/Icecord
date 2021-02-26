@@ -27,8 +27,11 @@ class ServerHome extends React.Component{
         this.props.privateServers.forEach(server => {
             this.props.fetchServer(server.id).then(() => {
                 serversLoaded += 1;
-                if(serversLoaded === this.props.privateServers.lenght){
+                
+                if(serversLoaded === this.props.privateServers.length){
+                    // 
                     this.setState({loaded: true})
+
                 }
             });
         })
@@ -38,9 +41,22 @@ class ServerHome extends React.Component{
         this.props.setCurrentDMUserId(null);
     }
 
+    findUserName(){
+        let channelId = parseInt(this.props.location.pathname.split("/")[3])
+        
+        for(let serverId in this.props.channels){
+            if(this.props.channels[serverId].id === channelId){
+                
+                return this.props.users[serverId][0].id === this.props.currentUser.id ?
+                    this.props.users[serverId][1].username : this.props.users[serverId][0].username
+            }
+        }
+        return null;
+    }
 
     render(){
         // 
+        
         return(
             <div id="home-container">
                 <div id="home-header">
@@ -53,7 +69,14 @@ class ServerHome extends React.Component{
                         </div>
                     </div>
                     <div id="home-body-header">
-                        {this.props.currentDMUser ? this.props.currentDMUser.username : null}
+                        <div>
+
+                            {
+                                (this.state.loaded && 
+                                this.props.location.pathname.split("/").length === 4) ? 
+                                this.findUserName() : null
+                            }
+                        </div>
                     </div>
                 </div>
                 
@@ -65,8 +88,10 @@ class ServerHome extends React.Component{
                             </div>
                             <ul id="home-nav-body-dm-list">
                                 {   
-                                    this.state.loaded ? 
+                                    
+                                    (this.state.loaded) ? 
                                     this.props.privateServers.map((server,idx) => {
+                                        // 
                                         return <DMListItem server={server} 
                                             key={idx}
                                             channel={this.props.channels[server.id]}

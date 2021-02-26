@@ -57,9 +57,12 @@ export const deleteServer = serverId => dispatch => {
         .fail(res => dispatch(receiveServerErrors($.parseJSON(res.responseText))))
 }
 
-export const joinServer = link => dispatch => {
-    return ServerAPIUtil.joinServer(link)
-        .then(payload => dispatch(receiveServer(payload)))
+export const joinServer = (link, id) => dispatch => {
+    return ServerAPIUtil.joinServer(link,id)
+        .then(payload => {
+            debugger
+            return dispatch(receiveServer(payload))
+        })
         .fail(res => dispatch(receiveServerErrors($.parseJSON(res.responseText))))
 }
 

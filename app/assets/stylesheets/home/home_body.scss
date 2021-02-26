@@ -11,11 +11,52 @@
         background-color: #2f3136;
         #home-nav-body-header{
             margin-top: 20px;
-            margin-left: 10px;
+            margin-left: 15px;
+            margin-bottom: 10px;
             h5{
                 font-size: 13px;
                 font-weight: bold;
                 color: #8e9297;
+            }
+        }
+        #home-nav-body-dm-list{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            li{
+                box-sizing: border-box;
+                width: 224px;
+                height: 42px;
+                padding: 0 8px;
+                margin-top: 3px;
+                display: flex;
+                border-radius: 5px;
+                a{
+                    box-sizing: border-box;
+                    width: 100%;
+                    display: flex;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 14px;
+                    align-items: center;
+                    img{
+                        width: 32px;
+                        box-sizing: border-box;
+                        height: 32px;
+                        padding: 3px;
+                        margin-right: 12px;
+                        border-radius: 50%;
+                        background-color: #43b581;
+                    }
+
+                }
+            }
+            li:hover{
+                background-color: #393c43;
+            }
+            li.current-dm{
+                background-color: #393c43;
             }
         }
     }

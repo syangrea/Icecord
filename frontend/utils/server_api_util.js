@@ -32,13 +32,14 @@ export const fetchServer = serverId => {
     })
 }
 
-export const joinServer = link => {
+export const joinServer = (link,id) => {
     return $.ajax({
         method: "POST",
         url: "/api/user_servers",
         data: {
             user_server: {
-                link
+                link,
+                id
             }
         }
     })

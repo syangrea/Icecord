@@ -4,7 +4,9 @@ import { createServer, deleteServer, fetchServer, joinServer, leaveServer } from
 
 const mSTP = state => {
     return {
-        servers: Object.values(state.entities.servers),
+        servers: Object.values(state.entities.servers).filter(server => {
+            return !server.directMessage
+        }),
         errors: state.errors.server,
 
     }

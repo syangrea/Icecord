@@ -35,6 +35,15 @@
         width: 100%;
         color: white;
         background-color: #36393f;
+        display: flex;
+        align-items: center;
+        div{
+            
+            font-size: 15px;
+            font-weight: bold;
+            margin-left: 25px;
+
+        }
     }
     
 }

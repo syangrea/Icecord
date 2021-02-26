@@ -16,7 +16,7 @@ const MessagesReducer = (state = {}, action) => {
         case LOGOUT_CURRENT_USER:
             return {};
         case RECEIVE_SERVER:
-            return Object.assign({}, action.payload.messages)
+            return Object.assign({}, state, action.payload.messages)
         default:
             return state;
     }

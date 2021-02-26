@@ -11,7 +11,7 @@ export default class JoinServerModal extends React.Component {
     }
 
     handleJoin(e) {
-        return this.props.joinServer(this.state.link);
+        return this.props.joinServer(this.state.link, this.props.currentUserId);
     }
 
     render() {

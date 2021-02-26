@@ -30,9 +30,12 @@ export default class ServerLanding extends React.Component{
             <div id="server-landing">
                 <div id="server-nav-bar">
                     <li onClick={this.handleNavClick(-1)} id="server-home-icon" className={`${this.props.navClicked === -1 ? "nav-clicked" : null}`}>
+                        <div>
+
                         <Link to="/server/home">
                             <img className="default-icon" src="https://img.icons8.com/dusk/64/000000/discord-logo.png" /> 
                         </Link>
+                        </div>
                     </li>
                     <div id="nav-divider-line"></div>
                     <ServerListContainer />
@@ -52,7 +55,7 @@ export default class ServerLanding extends React.Component{
                
                 <Switch>
 
-                    <Route exact path="/server/home" component={ServerHome}/>
+                    <Route path="/server/home" component={ServerHome}/>
                     <Route path="/server/:serverId" component={ServerContainer} />
                     
                 </Switch>

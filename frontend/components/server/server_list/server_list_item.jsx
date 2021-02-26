@@ -57,7 +57,9 @@ export default class ServerListItem extends React.Component{
                         className={`server-list-item-li ${this.props.isNavClicked ? "nav-clicked" : null}`}>
                         <div className="server-list-item">
                             <Link to={`/server/${this.props.server.id}/channel/${this.props.defaultChannel.id}`}>
-                                {this.props.server.name.slice(0,2)}
+                                <div>
+                                    {this.props.server.name.slice(0,2)}
+                                </div>
                             </Link>
                             
                         </div>

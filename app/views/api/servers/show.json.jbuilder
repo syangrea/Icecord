@@ -1,7 +1,7 @@
 json.key_format! camelize: :lower
 
 json.server do 
-    json.extract! @server, :id, :name, :link, :owner_id
+    json.extract! @server, :id, :name, :link, :owner_id, :direct_message
 
 
 end

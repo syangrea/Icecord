@@ -37,7 +37,12 @@ class ServerMemberListItem extends React.Component{
                     <li className="server-member">
                 
                         <div id="server-member-icon-container">
-                            <img className="default-icon" src="https://img.icons8.com/dusk/64/000000/discord-logo.png" />
+                            {
+                                this.props.user.photoUrl ? 
+                                <img className="profile-icon" src={this.props.user.photoUrl} />
+                                :
+                                <img className="default-icon" src="https://img.icons8.com/dusk/64/000000/discord-logo.png" />
+                            }
                         </div>
                         <div>{this.props.user.username}</div>
                     </li>

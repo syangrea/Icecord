@@ -155,9 +155,14 @@
                     align-items: center;
                     margin-right: 8px;
 
-                    img{
+                    .default-icon{
                         width: 24px;
                         height: 24px;
+                    }
+                    .profile-icon{
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
                     }
                 }
             }

@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem "aws-sdk-s3", require: false
+
 gem 'jquery-rails'
 gem 'better_errors'
 gem 'binding_of_caller'

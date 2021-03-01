@@ -8,6 +8,7 @@ class Server < ApplicationRecord
     after_initialize :ensure_unique_link
     after_create :owner_join, :create_default_channel
 
+    has_one_attached :photo
     has_many :user_servers, dependent: :destroy
     has_many :users,
         through: :user_servers

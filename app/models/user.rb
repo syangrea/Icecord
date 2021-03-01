@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    has_one_attached :photo
     has_many :user_servers
     has_many :servers,
         through: :user_servers

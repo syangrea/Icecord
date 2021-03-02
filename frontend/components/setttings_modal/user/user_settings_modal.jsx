@@ -1,4 +1,5 @@
 import React from 'react';
+import AccountSettings from './account_settings';
 
 export default class UserSettingsModal extends React.Component {
 
@@ -7,20 +8,20 @@ export default class UserSettingsModal extends React.Component {
         this.state = {
             setting: ""
         }
+        this.handleSettingClick = this.handleSettingClick.bind(this);
     }
 
-    // handleSettingClick(e) {
-    //     this.setState({ setting: e.target.innerText })
-    // }
+    handleSettingClick(e) {
+        this.setState({ setting: e.target.innerText })
+    }
 
     render() {
-        // let component;
-        // switch (this.state.setting) {
-        //     case 'Overview':
-        //         component = <OverviewSettingsContainer />
-        //     default:
-        //         return null;
-        // }
+        let component;
+        switch (this.state.setting) {
+            case 'My Account':
+                component = <AccountSettings />
+           
+        }
         return (
             <div id="user-settings-modal" className="specific-settings-modal">
                 <div className="settings-sidebar">
@@ -28,7 +29,7 @@ export default class UserSettingsModal extends React.Component {
                     <div className="settings-nav">
                         <h5>User Settings</h5>
                         <ul>
-                            
+                            <li onClick={this.handleSettingClick}>My Account</li>
                             {this.props.logoutModal}
                         </ul>
                     </div>
@@ -36,7 +37,7 @@ export default class UserSettingsModal extends React.Component {
                 <div className="settings-main">
 
                     <div className="settings-body-container">
-                        
+                        {component}
                     </div>
                     <div className="settings-exit">
                         <button onClick={e => this.props.closeSettingsModal()}>

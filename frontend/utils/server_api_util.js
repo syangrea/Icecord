@@ -2,19 +2,19 @@ export const createServer = server => {
     return $.ajax({
         method: "POST", 
         url: "/api/servers",
-        data: {
-            server
-        }
+        data: server,
+        contentType: false,
+        processData: false
     })
 }
 
-export const updateServer = (server) => {
+export const updateServer = (server, serverId) => {
     return $.ajax({
         method: "PATCH", 
-        url: `/api/servers/${server.id}`,
-        data: {
-            server
-        }
+        url: `/api/servers/${serverId}`,
+        data: server,
+        contentType: false,
+        processData: false
     })
 }
 

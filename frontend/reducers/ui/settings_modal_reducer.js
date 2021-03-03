@@ -10,8 +10,6 @@ const settingsModalReducer = (state = null, action) => {
             return action.componentName;
         case CLOSE_SETTINGS_MODAL:
             return null;
-        case RECEIVE_SERVER:
-            return null;
         case LOGOUT_CURRENT_USER:
             return null;
         case REMOVE_SERVER:

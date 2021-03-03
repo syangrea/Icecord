@@ -95,8 +95,10 @@ class AccountSettings extends React.Component{
                 </div>
                 <div id="account-settings-edit-container">
                     <div id="account-settings-edit-header">
-                        {avatarComponent}
-                        <h5>{this.props.currentUser.username}</h5>
+                        <div>
+                            {avatarComponent}
+                            <h5>{this.props.currentUser.username}</h5>
+                        </div>
                         <button onClick={this.handleChangePhoto}>Upload Avatar</button>
                         <input type="file" style={{display: 'none'}}
                             ref={comp => this.fileInput = comp}
@@ -104,14 +106,14 @@ class AccountSettings extends React.Component{
                             accept="image/*"/>
                     </div>
                     <div id="account-settings-edit-body">
-                        <div id="edit-username">
+                        <div id="edit-username" className="current-user-property-container">
                             <div className="current-user-property">
                                 <span>USERNAME</span>
                                 <div>{this.props.currentUser.username}</div>
                             </div>
                             <button onClick={this.handleEdit("username")}>Edit</button>
                         </div>
-                        <div id="edit-email">
+                        <div id="edit-email" className="current-user-property-container">
                             <div className="current-user-property">
                                 <span>EMAIL</span>
                                 <div>{this.props.currentUser.email}</div>

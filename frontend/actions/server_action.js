@@ -45,8 +45,8 @@ export const createServer = server => dispatch => {
         .then(payload => dispatch(receiveServer(payload)))
         .fail(res => dispatch(receiveServerErrors($.parseJSON(res.responseText))))
 }
-export const updateServer = server => dispatch => {
-    return ServerAPIUtil.updateServer(server)
+export const updateServer = (server,serverId) => dispatch => {
+    return ServerAPIUtil.updateServer(server, serverId)
         .then(payload => dispatch(receiveServer(payload)))
         .fail(res => dispatch(receiveServerErrors($.parseJSON(res.responseText))))
 }

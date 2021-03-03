@@ -11,9 +11,9 @@ const mSTP = (state,ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        updateServer: server => {
+        updateServer: (server,serverId) => {
             
-            return dispatch(updateServer(server));
+            return dispatch(updateServer(server, serverId));
         }
     }
 }

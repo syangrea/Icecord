@@ -49,7 +49,16 @@ export default class ServerListItem extends React.Component{
 
     render(){
         // 
-       
+       let imageComp;
+       if(this.props.server.photoUrl){
+            imageComp = <div>
+                <img src={this.props.server.photoUrl} alt=""/>
+            </div>
+       }else{
+           imageComp = <div>
+                {this.props.server.name.slice(0,2)}
+            </div>
+       }
         return (
             <div>
                 <ContextMenuTrigger id={`server-nav-context-menu-${this.props.server.id}`}>
@@ -57,9 +66,7 @@ export default class ServerListItem extends React.Component{
                         className={`server-list-item-li ${this.props.isNavClicked ? "nav-clicked" : null}`}>
                         <div className="server-list-item">
                             <Link to={`/server/${this.props.server.id}/channel/${this.props.defaultChannel.id}`}>
-                                <div>
-                                    {this.props.server.name.slice(0,2)}
-                                </div>
+                                {imageComp}
                             </Link>
                             
                         </div>

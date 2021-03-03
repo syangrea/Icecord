@@ -6,7 +6,7 @@ export default class UserSettingsModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            setting: ""
+            setting: "My Account"
         }
         this.handleSettingClick = this.handleSettingClick.bind(this);
     }

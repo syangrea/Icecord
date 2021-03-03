@@ -10,6 +10,8 @@ import DeleteServerModalContainer from './server/delete_server_modal_container';
 import LogoutModalContainer from './user/logout_modal_container'
 import CreateChannel from './channel/create_channel';
 import DeleteChannel from './channel/delete_channel';
+import EditUsernameModal from './user/edit_username_modal';
+import EditEmailModal from './user/edit_email_modal';
 
 function Modal({modal, closeModal}){
     // 
@@ -38,6 +40,12 @@ function Modal({modal, closeModal}){
             break;
         case 'deleteServer':
             component = <DeleteServerModalContainer />;
+            break;
+        case 'editUsername':
+            component = <EditUsernameModal />;
+            break;
+        case 'editEmail':
+            component = <EditEmailModal />;
             break;
         case 'logout':
             component = <LogoutModalContainer />;

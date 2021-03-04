@@ -101,7 +101,48 @@
                     #server-overview-1{
                         width: 660px;
                         display: flex;
-                        justify-content: flex-end;
+                     
+
+                        #server-overview-1-photo{
+                            display: flex;
+                            margin-right: 20px;
+                            .server-upload-image{
+                                margin-right: 20px;
+                                .edit-server-select-file{
+                                    cursor: pointer;
+                                    width: 100px;
+                                    height: 100px;
+                                    border-radius: 50%;
+                                    background-color: #7289da;
+                                    color: white;
+                                    img{
+                                        border-radius: 50%;
+                                        width: inherit;
+                                        height: inherit;
+                                    }
+                                }
+                            }
+                            .server-upload-button{
+                                div{
+                                    color: #b9bbbe;
+                                    width: 180px;
+                                    margin-bottom: 8px;
+                                    font-size: 13px;
+                                    margin-bottom: 20px;
+                                }
+                                button{
+                                    border: white solid 1px;
+                                    padding: 10px 16px;
+                                    font-size: 14px;
+                                    color: white;
+                                    background-color: inherit;
+                                    border-radius: 5px;
+                                }
+                                button:active{
+                                    background-color: #4a4d53;
+                                }
+                            }
+                        }
 
                         #server-overview-1-body{
                             width: 320px;

@@ -14,10 +14,15 @@ class ServerMemberListItem extends React.Component{
     }
 
     clickMessage(e){
+        
         if(this.props.privateChannel){
             this.props.history.push(`/server/home/${this.props.privateChannel.id}`)
         }else{
-            this.props.createPrivateServer({name: 'privateServer', direct_message: true, ownerId: this.props.currentUserId})
+            const formData = new FormData();
+            formData.append('server[name]', 'privateServer');
+            formData.append('server[direct_message]', true);
+            formData.append('server[ownerId]', this.props.currentUserId);
+            this.props.createPrivateServer(formData)
                 .then(res => {
                     
                     this.props.joinServer(res.payload.server.link, this.props.user.id)
@@ -68,6 +73,7 @@ class ServerMemberListItem extends React.Component{
 }
 
 const mSTP = (state, ownProps) => {
+    
     return {
         privateChannel: getPrivateChannel(state, ownProps.user),
         currentUserId: state.session.id

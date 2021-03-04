@@ -8,7 +8,7 @@ export const patchUser = user => {
     })
 }
 export const patchUserPhoto = (userFormData,currentUserId) => {
-    // debugger
+    
     return $.ajax({
         method: "PATCH",
         url: `/api/users/${currentUserId}`,

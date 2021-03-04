@@ -67,12 +67,18 @@
                 display: flex;
                 align-items: center;
                 img{
+                    cursor: pointer;
                     width: 95px;
                     height: 95px;
                     box-sizing: border-box;
                     border-radius: 50%;
 
                 }
+                .default-icon{
+                    padding: 5px;
+                    background-color: #f04747;
+                }
+
                 h5{
                     font-size: 22px;
                     font-weight: bold;
@@ -91,5 +97,115 @@
 }
 
 .modal-child{
-    
+    .edit-user{
+        box-sizing: border-box;
+        width: 440px;
+        .edit-user-header{
+            box-sizing: border-box;
+            padding: 24px 16px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 440px;
+            h5{
+                font-size: 24px;
+                font-weight: bold;
+                line-height: 30px;
+            }
+            span{
+                color: #8e9297;
+                font-size: 16px;
+                border-top: 8px;
+                
+            }
+            button{
+                position: absolute;
+                top: 24px;
+                right: 26px;
+                width: 20px;
+                height: 20px;
+                color: white;
+                img{
+                    width: inherit;
+                    height: inherit;
+                }
+            }
+        }
+        .edit-user-body{
+            padding: 0 16px 16px 16px;
+            box-sizing: border-box;
+            width: 440px;
+            height: 162px;
+            .edit-user-input{
+                height: 66px;
+                box-sizing: border-box;
+                label{
+                    font-weight: bold;
+                    box-sizing: border-box;
+                    font-size: 12px;
+                    margin-bottom: 8px;
+                    color: #8e9297;
+                    text-transform: capitalize;
+                }
+                input{
+                    margin-top: 8px;
+                    box-sizing: border-box;
+                    color: white;
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: #282a2f 1px solid ;
+                    background-color: #303339;
+                    transition: .3s;
+                    font-size: 16px;
+                }
+                input:focus{
+                    border: 1px solid #7289da;
+                }
+            }
+            .edit-user-input:nth-child(2){
+                margin-top: 16px;
+            }
+        }
+        .edit-user-footer{
+            box-sizing: border-box;
+            width: 440px;
+            padding: 16px;
+            display: flex;
+            justify-content: flex-end;
+            background-color: #2f3136;
+            align-items: center;
+            button{
+                color: white;
+                font-weight: bold;
+            }
+            #cancel-modal-button{
+                background-color: inherit;
+                border: none;
+                outline: none;
+                margin-right: 38px;
+                
+            }
+            #cancel-modal-button:hover{
+                text-decoration: underline;
+            }
+            #done-modal-button{
+                border-radius: 5px;
+                background-color: #7289da;
+                border: none;
+                outline: none;
+                height: 38px;
+                width: 96px;
+                box-sizing: border-box;
+            }
+            #done-modal-button:hover{
+                background-color: #677bc4;
+            }
+            #done-modal-button:active{
+                background-color: #5b6eae;
+            }
+
+        }
+    }
 }

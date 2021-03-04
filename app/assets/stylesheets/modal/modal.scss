@@ -244,6 +244,36 @@
             padding: 0 8px 0 16px;
             display: flex;
             flex-direction: column;
+            #create-server-photo{
+                align-self: center;
+            }
+            .create-server-select-file{
+                border: 3px black dashed;
+                border-radius: 50%;
+                margin-bottom: 32px;
+                height: 80px;
+                width: 80px;
+                box-sizing: border-box;
+                align-self: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                img{
+                    width: inherit;
+                    height: inherit;
+                }
+                i{
+                    font-size: 20px;
+                }
+                div{
+                    font-weight: bold;
+                    font-size: 12px;
+                    display: block;
+                }
+                
+            }
             label{
                 font-size: 10px;
                 font-weight: 700;

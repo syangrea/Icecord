@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        debugger
+        
         if @user
             if user_params[:photo]
                 if @user.update(user_params)

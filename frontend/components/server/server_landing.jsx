@@ -10,6 +10,24 @@ export default class ServerLanding extends React.Component{
     constructor(props){
         super(props);
         this.handleLogout = this.handleLogout.bind(this);
+        this.state = {
+            loaded: false
+        }
+    }
+
+    componentDidMount(){
+        let serversLoaded = 0;
+        this.props.privateServers.forEach(server => {
+            this.props.fetchServer(server.id).then(() => {
+                serversLoaded += 1;
+                
+                if(serversLoaded === this.props.privateServers.length){
+                    // 
+                    this.setState({loaded: true})
+
+                }
+            });
+        })
     }
 
     handleLogout(e){
@@ -53,18 +71,27 @@ export default class ServerLanding extends React.Component{
                     </li>
                 </div>
                
-                <Switch>
+                {
+                    this.state.loaded ? 
 
-                    <Route path="/server/home" component={ServerHome}/>
-                    <Route path="/server/:serverId" component={ServerContainer} />
-                    
-                </Switch>
+                    <Switch>
+                        
+                        <Route path="/server/home" component={ServerHome}/>
+                        <Route path="/server/:serverId" component={ServerContainer} />
+                        
+                    </Switch> : null
+                }
                 
                 
                 
                 <div id="name-settings">
                     <div id="user-box-icon-container">
-                        <img className="default-icon" src="https://img.icons8.com/dusk/64/000000/discord-logo.png" />                        
+                        {
+                            this.props.user.photoUrl ? 
+                            <img className="profile-icon" src={this.props.user.photoUrl} />
+                            :
+                            <img className="default-icon" src="https://img.icons8.com/dusk/64/000000/discord-logo.png" />
+                        }
                     </div>
                         
                     <div id="user-box-info">

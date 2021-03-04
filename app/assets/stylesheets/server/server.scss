@@ -45,11 +45,13 @@
             background-color: #36393f;
             width: 100%;
             align-items: center;
-            i{
+            .hashtag-symbol{
                 width: 20px;
                 height: 20px;
                 margin-left: 8px;
-                color: #8e9297;
+                fill: #8e9297;
+                font-weight: bold;
+
             }
             span{
                 color: white;
@@ -90,7 +92,7 @@
                     align-items: center;
                     
                     svg{
-                        margin-right: 2px;
+                        margin-right: 4px;
                         width: 9px;
                         fill: #8e9297;
                         transition: .3s;

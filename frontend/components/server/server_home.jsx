@@ -23,18 +23,9 @@ class ServerHome extends React.Component{
     }
 
     componentDidMount(){
-        let serversLoaded = 0;
-        this.props.privateServers.forEach(server => {
-            this.props.fetchServer(server.id).then(() => {
-                serversLoaded += 1;
-                
-                if(serversLoaded === this.props.privateServers.length){
-                    // 
-                    this.setState({loaded: true})
+        
+        this.setState({loaded: true})
 
-                }
-            });
-        })
     }
 
     componentWillUnmount(){

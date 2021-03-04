@@ -75,15 +75,15 @@ export default class OverviewSettings extends React.Component{
         }
         let imageComp;
         if(this.state.photoUrl){
-            imageComp = <div className="create-server-select-file">
+            imageComp = <div className="edit-server-select-file">
                 <img src={this.state.photoUrl}/>
             </div>
         }else if(this.props.server.photoUrl){
-            imageComp = <div className="create-server-select-file">
+            imageComp = <div className="edit-server-select-file">
                 <img src={this.props.server.photoUrl}/>
             </div>
         }else{
-            imageComp = <div className="create-server-select-file">
+            imageComp = <div className="edit-server-select-file">
                 {this.props.server.name.slice(0,2)}
             </div>
         }
@@ -92,11 +92,11 @@ export default class OverviewSettings extends React.Component{
                 <h5>SERVER OVERVIEW</h5>
                 <div id="server-overview-1">
                     <div id="server-overview-1-photo">
-                        <div onClick={this.handleChangePhoto}>
+                        <div className="server-upload-image" onClick={this.handleChangePhoto}>
                             {imageComp}
                         </div>
-                        <div>
-                            <span>We recommend an image of at least 512x512 for the server</span>
+                        <div className="server-upload-button">
+                            <div>We recommend an image of at least 512x512 for the server</div>
                             <button onClick={this.handleChangePhoto}>Upload Image</button>
                         </div>
                         <input type="file" 

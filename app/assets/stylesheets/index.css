@@ -4,6 +4,10 @@
     font-family: Arial, Helvetica, sans-serif;
     /* box-sizing: border-box; */
 }
+button{
+  cursor: pointer;
+}
+
 
 .discord-logo{
   width: 145px;

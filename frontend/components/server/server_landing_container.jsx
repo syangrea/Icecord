@@ -1,15 +1,17 @@
 import {connect} from 'react-redux';
 import { openModal } from '../../actions/modal_action';
-import { createServer } from '../../actions/server_action';
+import { createServer, fetchServer } from '../../actions/server_action';
 import { logout } from '../../actions/session_action';
 import ServerLanding from './server_landing';
 import React from 'react';
 import {openSettingsModal} from '../../actions/settings_modal_action'
 import { landingNavClick } from '../../actions/filter_actions';
+import { getPrivateServers } from '../../utils/server_home_util';
 
 const mSTP = state => {
     // 
     return {
+        privateServers: getPrivateServers(state),
         user: state.entities.users[state.session.id],
         navClicked: state.ui.filters.landingNavClicked
 
@@ -33,7 +35,10 @@ const mDTP = dispatch => {
 
         landingNavClick: id => {
             return dispatch(landingNavClick(id))
-        }
+        },
+        fetchServer: serverId => {
+            return dispatch(fetchServer(serverId))
+        },
         
     }
     

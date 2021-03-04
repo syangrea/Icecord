@@ -50,7 +50,7 @@
         flex-direction: column;
         box-sizing: border-box;
         width: 100%;
-        padding: 50px 16px 50px 16px;
+        padding: 20px 16px 20px 16px;
         flex: 1 0 10px;
 
         
@@ -95,13 +95,21 @@
             margin-top: 17px;
             margin-bottom: 8px;
 
-            img{
+            .default-icon{
                 background-color: #f04747;
                 height: 35px;
                 width: 35px;
                 margin-right: 21px;
                 border-radius: 50%;
+                padding: 2px;
+                box-sizing: border-box;
 
+            }
+            .profile-icon{
+                border-radius: 50%;
+                height: 35px;
+                width: 35px;
+                margin-right: 21px;
             }
 
             .starting-message-container{

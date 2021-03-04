@@ -13,8 +13,8 @@ const mSTP = (state,ownProps) => {
     return {
         server: state.entities.servers[ownProps.match.params.serverId],
         isOwner: state.entities.servers[ownProps.match.params.serverId].ownerId === state.session.id,
-        channels: getChannelsInServer(state, parseInt(ownProps.match.params.serverId))
-        
+        channels: getChannelsInServer(state, parseInt(ownProps.match.params.serverId)),
+        allChannels: state.entities.channels
     }
 }
 

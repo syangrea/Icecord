@@ -60,7 +60,7 @@ export const deleteServer = serverId => dispatch => {
 export const joinServer = (link, id) => dispatch => {
     return ServerAPIUtil.joinServer(link,id)
         .then(payload => {
-            debugger
+            
             return dispatch(receiveServer(payload))
         })
         .fail(res => dispatch(receiveServerErrors($.parseJSON(res.responseText))))

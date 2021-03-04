@@ -7,6 +7,7 @@ export const getPrivateServers = state => {
 }
 
 export const getDMUsers = state => {
+    
     let privateServers = getPrivateServers(state)
 
     let dmUserServers = Object.values(state.entities.userServers).filter(userServer => {
@@ -20,6 +21,7 @@ export const getDMUsers = state => {
         users[userServer.serverId] = users[userServer.serverId] || [];
         users[userServer.serverId].push(state.entities.users[userServer.userId]);
     })
+    
     return users
 
 }

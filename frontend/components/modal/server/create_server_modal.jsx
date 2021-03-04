@@ -53,7 +53,7 @@ export default class CreateServerModal extends React.Component{
         }else{
             imageComp = <div className="create-server-select-file">
                 <i className="fas fa-camera"></i>
-                <span>UPLOAD</span>
+                <div>UPLOAD</div>
             </div>
         }
         return(

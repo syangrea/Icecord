@@ -37,7 +37,7 @@ json.channels do
 end
 
 json.messages do 
-    @server.channels.each do |channel|
+    @server.channels.includes(:messages).each do |channel|
         channel.messages.each do |message|
             json.set! message.id do 
 

@@ -8,8 +8,19 @@ export default class MessagesBox extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            mounted: false
+            mounted: false,
+            messageAllowContextMenu: null,
+            messageAllowEdit: null
         }
+        this.handleMessageContextMenu = this.handleMessageContextMenu.bind(this);
+        this.handleMessageEdit = this.handleMessageEdit.bind(this);
+    }
+
+    handleMessageContextMenu(messageId){
+        this.setState({messageAllowContextMenu: messageId});
+    }
+    handleMessageEdit(messageId){
+        this.setState({messageAllowEdit: messageId});
     }
 
     componentDidMount(){
@@ -20,13 +31,21 @@ export default class MessagesBox extends React.Component{
             {
                 received: data => {
                   
-                    let parsedData = $.parseJSON(data.data);
                     // 
                     switch(data.type){
                         case 'SENT_MESSAGE':
-                          
+                            let parsedData = $.parseJSON(data.data);
                             this.props.receiveMessage(parsedData);
                             break;
+                        case 'EDIT_MESSAGE':
+                            
+                            let parsedData2 = $.parseJSON(data.data);
+                            this.props.receiveMessage(parsedData2);
+                            break;
+                        case 'DELETE_MESSAGE':
+                            
+                            let messageId = data.data;
+                            this.props.removeMessage(messageId)
                         // case 'LOAD_MESSAGES':
                         //     // 
                         
@@ -39,6 +58,14 @@ export default class MessagesBox extends React.Component{
                     // 
                   
                     return this.perform("sendMessage", message)
+                },
+                editMessage: function(message){
+                    return this.perform("editMessage", message)
+
+                },
+                deleteMessage: function(messageId){
+                    return this.perform("deleteMessage", {messageId})
+
                 }
                 // ,
                 // getMessages: function(){
@@ -70,9 +97,25 @@ export default class MessagesBox extends React.Component{
         this.props.messages.forEach((message,idx) => {
             
             if(idx === 0 || this.props.messages[idx - 1].userId !== message.userId){
-                messages.push(<MessageContainer isStartingMessage={true} key={message.id * idx} message={message} />)
+                messages.push(<MessageContainer isStartingMessage={true} 
+                                key={message.id * idx} 
+                                message={message} 
+                                subscription={this.subscription}
+                                handleMessageContextMenu={this.handleMessageContextMenu}
+                                handleMessageEdit={this.handleMessageEdit}
+                                messageAllowContextMenu={this.state.messageAllowContextMenu}
+                                messageAllowEdit={this.state.messageAllowEdit}
+                                />)
             }else{
-                messages.push(<MessageContainer isStartingMessage={false} key={message.id * idx} message={message}/>)
+                messages.push(<MessageContainer isStartingMessage={false} 
+                                key={message.id * idx} 
+                                message={message}
+                                subscription={this.subscription}
+                                handleMessageContextMenu={this.handleMessageContextMenu}
+                                handleMessageEdit={this.handleMessageEdit}
+                                messageAllowContextMenu={this.state.messageAllowContextMenu}
+                                messageAllowEdit={this.state.messageAllowEdit}
+                                />)
             }
         })
 

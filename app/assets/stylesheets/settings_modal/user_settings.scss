@@ -66,17 +66,47 @@
             div{
                 display: flex;
                 align-items: center;
-                img{
+                .edit-user-select-file{
                     cursor: pointer;
                     width: 95px;
                     height: 95px;
                     box-sizing: border-box;
                     border-radius: 50%;
+                    transition: .1s;
+                    .profile-icon{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
 
+                    .default-icon{
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 50%;
+                        padding: 5px;
+                        background-color: #f04747;
+                    }
                 }
-                .default-icon{
-                    padding: 5px;
-                    background-color: #f04747;
+                .edit-user-select-file.hover-image{
+                    opacity: 50%;
+                    position: relative;
+                    div{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        span{
+                            text-align: center;
+                            display: block;
+                            width: 50px;
+                            font-size: 14px;
+                            font-weight: bold;
+                            color: white;
+                        }
+                        
+                    }
                 }
 
                 h5{
@@ -94,6 +124,61 @@
             margin-top: 16px;
         }
     }
+
+    #save-changes{
+        width: 674px;
+        height: 32px;
+        padding: 10px 10px 10px 16px;
+        color: white;
+        border-radius: 5px;
+        background-color: rgba(0,0,0,.5);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        position: fixed;
+        bottom: 10px;
+        span{
+            font-size: 15px;
+        }
+        div{
+            display: flex;
+            align-items: center;
+            button{
+                box-sizing: content-box;
+                border:none;
+                outline: none;
+                color: white;
+                border-radius: 5px;
+            }
+            #user-change-reset{
+                background-color: inherit;
+                width: 60px;
+                height: 28px;
+            }
+            #user-change-reset:hover{
+                text-decoration: underline;
+            }
+
+            #user-change-save{
+                background-color: #43b581;
+                width: 81.6;
+                height: 28px;
+                padding: 2px 16px 2px 16px;
+                margin-left: 10px;
+                align-self: center;
+            }
+
+            #user-change-save:hover{
+                background-color: #4ca374;
+            }
+            #user-change-save:focus{
+                background-color: #369167;
+            }
+        }
+    }
+
+
 }
 
 .modal-child{

@@ -106,8 +106,26 @@
                         #server-overview-1-photo{
                             display: flex;
                             margin-right: 20px;
-                            .server-upload-image{
+                            #server-upload-image-container{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
                                 margin-right: 20px;
+                                button{
+                                    margin-top: 15px;
+                                    font-weight: bold;
+                                    border: none;
+                                    outline: none;
+                                    background-color: inherit;
+                                    color: #b9bbbe;
+                                    font-size: 14px;
+                                }
+                                button:hover{
+                                    color: #72767d;
+                                }
+                            }
+                            .server-upload-image{
+                                
                                 .edit-server-select-file{
                                     cursor: pointer;
                                     width: 100px;
@@ -115,10 +133,39 @@
                                     border-radius: 50%;
                                     background-color: #7289da;
                                     color: white;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    transition: .2s;
                                     img{
                                         border-radius: 50%;
                                         width: inherit;
                                         height: inherit;
+                                    }
+                                    div{
+                                        font-size: 35px;
+                                    }
+                                }
+
+                                .edit-server-select-file.hover-image{
+                                    opacity: 50%;
+                                    position: relative;
+                                    div{
+                                        color: white;
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        span{
+                                            text-align: center;
+                                            display: block;
+                                            width: 50px;
+                                        }
                                     }
                                 }
                             }

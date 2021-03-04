@@ -80,12 +80,44 @@ class AccountSettings extends React.Component{
     render(){
         let avatarComponent;
         if(this.state.photoUrl.length > 0){
-            avatarComponent = <img onClick={this.handleChangePhoto} className="profile-icon" src={this.state.photoUrl} />
+            avatarComponent = 
+            <div className="edit-user-select-file">
+                <img onClick={this.handleChangePhoto} className="profile-icon" src={this.state.photoUrl} />
+            </div>
         }else if(this.props.currentUser.photoUrl){
-            avatarComponent = <img onClick={this.handleChangePhoto} className="profile-icon" src={this.props.currentUser.photoUrl} />
+            avatarComponent = 
+            <div className="edit-user-select-file">
+                <img onClick={this.handleChangePhoto} className="profile-icon" src={this.props.currentUser.photoUrl} />
+            </div>
         }else{
-            avatarComponent = <img onClick={this.handleChangePhoto} className="default-icon" src="https://img.icons8.com/dusk/64/000000/discord-logo.png" />
+            avatarComponent = 
+            <div className="edit-user-select-file">
+                <img onClick={this.handleChangePhoto} className="default-icon" src="https://img.icons8.com/dusk/64/000000/discord-logo.png" />
+            </div>
 
+        }
+        let hoverImageComp;
+        if(this.state.photoUrl.length > 0){
+            hoverImageComp = <div className="edit-user-select-file hover-image">
+                <img onClick={this.handleChangePhoto} className="profile-icon" src={this.state.photoUrl} />
+                <div onClick={this.handleChangePhoto}>
+                    <span>Change Icon</span>
+                </div>
+            </div>
+        }else if(this.props.currentUser.photoUrl){
+            hoverImageComp = <div className="edit-user-select-file hover-image">
+                <img onClick={this.handleChangePhoto} className="profile-icon" src={this.props.currentUser.photoUrl} />                
+                <div onClick={this.handleChangePhoto}>
+                    <span>Change Icon</span>
+                </div>
+            </div>
+        }else{
+            hoverImageComp = <div className="edit-user-select-file hover-image">
+                <img onClick={this.handleChangePhoto} className="default-icon" src="https://img.icons8.com/dusk/64/000000/discord-logo.png" />
+                <div onClick={this.handleChangePhoto}>
+                    <span>Change Icon</span>
+                </div>
+            </div>
         }
         
         return (
@@ -96,7 +128,11 @@ class AccountSettings extends React.Component{
                 <div id="account-settings-edit-container">
                     <div id="account-settings-edit-header">
                         <div>
-                            {avatarComponent}
+                            <div id="user-photo-container" 
+                                onMouseEnter={e => this.setState({hover: true})}
+                                onMouseLeave={e => this.setState({hover: false})}>
+                                {this.state.hover ? hoverImageComp : avatarComponent}
+                            </div>
                             <h5>{this.props.currentUser.username}</h5>
                         </div>
                         <button onClick={this.handleChangePhoto}>Upload Avatar</button>
@@ -126,12 +162,12 @@ class AccountSettings extends React.Component{
                 {
                     this.state.photoFile ? 
                     <div id="save-changes">
-                        <div id="save-changes-text">
+                        <span id="save-changes-text">
                             Careful --  you have unsaved changes!
-                        </div>
+                        </span>
                         <div id="save-changes-buttons">
-                            <button onClick={this.handleReset}>Reset</button>
-                            <button onClick={this.handleSubmitPhoto}>Save Changes</button>
+                            <button id="user-change-reset" onClick={this.handleReset}>Reset</button>
+                            <button id="user-change-save" onClick={this.handleSubmitPhoto}>Save Changes</button>
                         </div>
 
                     </div>

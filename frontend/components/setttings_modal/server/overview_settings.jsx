@@ -7,7 +7,8 @@ export default class OverviewSettings extends React.Component{
         this.state = {
             name: this.props.server.name,
             photoFile: null, 
-            photoUrl: ""
+            photoUrl: "",
+            removePhoto: false
         }
 
         this.handleReset = this.handleReset.bind(this);
@@ -20,7 +21,9 @@ export default class OverviewSettings extends React.Component{
     handleReset(e){
         this.setState({name: this.props.server.name,
             photoFile: null, 
-            photoUrl: ""})
+            photoUrl: "",
+            removePhoto: false
+        })
             
     }
 
@@ -30,13 +33,16 @@ export default class OverviewSettings extends React.Component{
         formData.append('server[name]', this.state.name);
         if (this.state.photoFile) {
             formData.append('server[photo]', this.state.photoFile);        
+        }else if(this.state.removePhoto){
+            formData.append('server[photo]','delete')
         }
         
         this.props.updateServer(formData, this.props.server.id)
             .then(() => {
                 this.setState({
                     photoFile: null, 
-                    photoUrl: ""
+                    photoUrl: "",
+                    removePhoto: false
                 })
             });
     }
@@ -50,19 +56,21 @@ export default class OverviewSettings extends React.Component{
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () =>
-          this.setState({ photoUrl: reader.result, photoFile: file});
+          this.setState({ photoUrl: reader.result, photoFile: file, removePhoto: false});
 
         if (file) {
           reader.readAsDataURL(file);
         } else if(!this.state.photoFile){
-          this.setState({ photoUrl: "", photoFile: null});
+          this.setState({ photoUrl: "", photoFile: null, removePhoto: false});
         }
     }
+
+
 
     render(){
         let saveChanges = null;
         if(this.props.server.name !== this.state.name ||
-            this.state.photoUrl){
+            this.state.photoUrl || this.state.removePhoto){
             saveChanges = (
             <div id="server-save-changes">
                 <span>Careful--you have unsaved changes!</span>
@@ -78,13 +86,38 @@ export default class OverviewSettings extends React.Component{
             imageComp = <div className="edit-server-select-file">
                 <img src={this.state.photoUrl}/>
             </div>
-        }else if(this.props.server.photoUrl){
+        }else if(this.props.server.photoUrl && !this.state.removePhoto){
             imageComp = <div className="edit-server-select-file">
                 <img src={this.props.server.photoUrl}/>
             </div>
         }else{
             imageComp = <div className="edit-server-select-file">
-                {this.props.server.name.slice(0,2)}
+                <div>
+                    {this.props.server.name.slice(0,2)}
+                </div>
+            </div>
+        }
+        let hoverImageComp;
+        if(this.state.photoUrl){
+            hoverImageComp = <div className="edit-server-select-file hover-image">
+                <img src={this.state.photoUrl}/>
+                <div>
+                    <span>Change Icon</span>
+                </div>
+            </div>
+        }else if(this.props.server.photoUrl && !this.state.removePhoto){
+            hoverImageComp = <div className="edit-server-select-file hover-image">
+                <img src={this.props.server.photoUrl}/>
+                <div>
+                    <span>Change Icon</span>                
+                </div>
+            </div>
+        }else{
+            hoverImageComp = <div className="edit-server-select-file hover-image">
+                <div>
+                    <span>Change Icon</span>
+                    
+                </div>
             </div>
         }
         return(
@@ -92,8 +125,28 @@ export default class OverviewSettings extends React.Component{
                 <h5>SERVER OVERVIEW</h5>
                 <div id="server-overview-1">
                     <div id="server-overview-1-photo">
-                        <div className="server-upload-image" onClick={this.handleChangePhoto}>
-                            {imageComp}
+                        <div id="server-upload-image-container">
+                            <div className="server-upload-image" 
+                                onClick={this.handleChangePhoto}
+                                onMouseEnter={e => this.setState({hover: true})}
+                                onMouseLeave={e => this.setState({hover: false})}>
+                                { this.state.hover ? hoverImageComp : imageComp }
+                            </div>
+                            {
+                                (this.props.server.photoUrl && !this.state.removePhoto ) 
+                                    || this.state.photoUrl ?
+
+                                <button onClick={e => {
+                                    if(this.state.photoFile){
+                                        this.setState({photoFile: null, photoUrl: ""})
+                                        this.fileInput.value = "";
+                                    }else{
+                                        this.setState({removePhoto: true});
+                                    }
+                                }}>
+                                    Remove
+                                </button> : null
+                            }
                         </div>
                         <div className="server-upload-button">
                             <div>We recommend an image of at least 512x512 for the server</div>

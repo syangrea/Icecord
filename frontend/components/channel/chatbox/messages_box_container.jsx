@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import { fetchMessages, receiveMessage, receiveMessages } from '../../../actions/message_action';
+import { fetchMessages, receiveMessage, receiveMessages, removeMessage } from '../../../actions/message_action';
 import { getChannelMessages } from '../../../utils/messages_util';
 import MessagesBox from './messages_box';
 
@@ -23,6 +23,9 @@ const mDTP = dispatch => {
         },
         fetchMessages: channelId => {
             return dispatch(fetchMessages(channelId));
+        },
+        removeMessage: messageId => {
+            return dispatch(removeMessage(messageId))
         }
 
     }

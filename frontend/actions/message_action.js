@@ -2,6 +2,7 @@
 import * as ChannelAPIUtil from '../utils/channel_api_util';
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
 export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES";
+export const REMOVE_MESSAGE = "REMOVE_MESSAGE";
 
 export const receiveMessage = message => {
     return {
@@ -15,6 +16,13 @@ export const receiveMessages = messages => {
     return {
         type: RECEIVE_MESSAGES,
         messages
+    }
+}
+
+export const removeMessage = messageId => {
+    return {
+        type: REMOVE_MESSAGE,
+        messageId
     }
 }
 

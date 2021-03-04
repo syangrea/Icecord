@@ -1,6 +1,6 @@
 json.key_format! camelize: :lower
 
-user.servers.each do |server|
+user.servers.includes(:channels).each do |server|
 
     server.channels.each do |channel|
         json.set! channel.id do

@@ -18,6 +18,21 @@ class ChatChannel < ApplicationCable::Channel
 
   end
   
+  def editMessage(data)
+    message = Message.find(data['id'])
+    if message.update(body: data['body'])
+      ChatChannel.broadcast_to(@channel, type: 'EDIT_MESSAGE',
+        data: ApplicationController.render(
+          :json, partial: 'api/messages/message', locals: {message: message}
+      ))
+    end
+  end
+
+  def deleteMessage(data)
+    message = Message.find(data['messageId'])
+    message.destroy
+    ChatChannel.broadcast_to(@channel, type: 'DELETE_MESSAGE', data: message.id)
+  end
 
   def sendMessage(data)
     

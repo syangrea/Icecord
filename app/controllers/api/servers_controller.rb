@@ -18,7 +18,11 @@ class Api::ServersController < ApplicationController
         # 
         @server = Server.find(params[:id])
         # 
-        if @server.update(server_params)
+        
+        if server_params[:photo] && server_params[:photo] === 'delete'
+            @server.photo.purge
+            render :show
+        elsif @server.update(server_params)
             render :show
         else
             # 

@@ -14,9 +14,12 @@ export default class Server extends React.Component{
     }
 
     componentDidMount(){
-        
-        return this.props.fetchServer(this.props.match.params.serverId)
-            .then(() => this.props.history.push(`/server/${this.props.match.params.serverId}/channel/${this.props.channels[0].id}`));
+        return this.props.fetchUser(currentUserId)
+            .then(() =>{
+
+                return this.props.fetchServer(this.props.match.params.serverId)
+                    .then(() => this.props.history.push(`/server/${this.props.match.params.serverId}/channel/${this.props.channels[0].id}`));
+            })
     }
 
     componentDidUpdate(oldProps){

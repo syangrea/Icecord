@@ -31,25 +31,20 @@ const Landing = props => {
                 </div>
                 <div id="background-wallpaper">
                     {/* <h1>pep</h1> */}
-                    <img id="background-cone-1" className="background-wallpaper-image" src="https://discord.com/assets/11ebd3cd1712fe17b647d846559d7559.svg" alt=""/>
-                    <img id="background-cone-2" className="background-wallpaper-image" src="https://discord.com/assets/d70fa33128cb72c4092abac7a0d25ed2.svg" alt=""/>
-                    <img id="background-cone-3" className="background-wallpaper-image" src="https://discord.com/assets/7df86467c3079db32f8a48aeadc450ca.svg" alt=""/>
-                    <img id="background-cone-4" className="background-wallpaper-image" src="https://discord.com/assets/6623b6310d590ec9be669189f4aa813a.svg" alt=""/>
-                    <img id="background-diamond" className="background-wallpaper-image" src="https://discord.com/assets/5cc3db60569965c8bd92a05f6cb09b8d.svg" alt=""/>
-                    <img id="background-back-houses" className="background-wallpaper-image" src="https://discord.com/assets/edaebb01cd24df779f6feae9a34bd7d8.svg" alt=""/>
-                    <img id="background-left-house" className="background-wallpaper-image" src="https://discord.com/assets/e92fcc9ab6e63c1a17e954af347a1f1d.svg" alt=""/>
-                    <img id="background-right-house" className="background-wallpaper-image" src="https://discord.com/assets/7b01f72a2054561145b6dd04add417c0.svg" alt=""/>
+                    
                 </div>
                 
             </div>
             <div id="landing-body">
                 <div id="landing-body-1">
                     <div className="landing-content">
-                        <img src="https://discord.com/assets/c01c644bc9fa2a28678ae2f44969d248.svg" alt=""/>
+                        <img src="https://raw.githubusercontent.com/asiddiki98/TalentShare/main/frontend/src/assets/images/category_demo.gif" alt=""/>
                         <div className="landing-body-description">
-                            <h1>An invite-only place with plenty of room to talk</h1>
-                            <p>Icecord servers are organized into topic-based chanels where you can 
-                                collaborate, share, and just talk about your day without clogging up a group chat.
+                            <h1>Talent Share - MERN and WebSockets</h1>
+                            <p>A social media application for artists, photographers, musicians, 
+                                and dancers to share their work. Built with instant 
+                                messaging feature to allow artists and potential
+                                recruiters/clients to connect.
                             </p>
                         </div>
                     </div>
@@ -59,36 +54,27 @@ const Landing = props => {
 
                         
                         <div className="landing-body-description">
-                            <h1>Where hanging out is easy</h1>
-                            <p>Grab a seat in a voice channel when you’re free. Friends in your server can 
-                                see you’re around and instantly pop in to talk without having to call.
+                            <h1>FightRPS - Three.js and Javascipt</h1>
+                            <p>3D Rock, Papers, Scissors where spacing and timing matters. 
+                                Built with Three.js for rendering 3D models and animations
+                                and Vanilla Javascript for DOM manipulation and game logic.
                             </p>
                         </div>
-                        <img src="https://discord.com/assets/98c9edf635a98377ec579aaa19ed47be.svg" alt="" />
+                        <img src="https://raw.githubusercontent.com/syangrea/FightRPS/main/images/gamecanvasgif.gif" alt="" />
                     </div>
                 </div>
-                <div id="landing-body-3">
-                    <div className="landing-content">
-
-                        <img src="https://discord.com/assets/9184fcadc2e3c84650dd4b075850d3d6.svg" alt="" />
-                        <div className="landing-body-description">
-                            <h1>From a few to a fandom</h1>
-                            <p>
-                                Get a community of any size running with moderation tools and custom 
-                                member access. Give members special powers, set up private channels, and more.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                
                 <div id="landing-body-4">
                     <div className="landing-content">
 
                         
                         <div className="landing-body-4-description">
-                            <h1>Reliable tech for staying close</h1>
-                            <p>Low-latency voice and video feels like you’re in the same room. 
-                                Wave hello over video, watch friends stream their games, or gather up and 
-                                have a drawing session with screen share.
+                            <h1>Icecord - Rails, React and ActionCable</h1>
+                            <p>Icecord is a chat application that allows users to be in 
+                                servers that act as a small community for it's members. 
+                                Within each server, there are channels, allowing server
+                                members to chat about different topics at the same time 
+                                without cluttering a single chat.
                             </p>
                         </div>
                         <img id="landing-big-img" src="https://discord.com/assets/f61264d792fd2556a618c95d97b5de07.svg" alt="" />
@@ -108,21 +94,67 @@ const Landing = props => {
                 <footer>
                     <div className="landing-content">
                         <div>
-                            <h3>My place to talk</h3>
+                            <h3>My Place To Talk</h3>
+                            <div>
+                                <span>Undergraduate</span> Computer Science BS - University at Buffalo - December 2019
+                                <br/>
+                                <span>Full Stack Software Engineer Program</span> App Academy - February 2021
+                                <br/>
+                                <span>About Me</span>
+                                I am a Software Engineer that likes learning new technology and exploring
+                                    different fields of Computer Science.  I am critical about clean, scalable
+                                    , and efficient code. Outside of being a developer, I am passionate
+                                    about health, exercise, and gaming. 
+                                <br/>
+                                <span>Why I have to be a developer:</span>
+                                
+                                1. I love problem solving and am good at it.
+                                <br/>                                
+                                2. Technology is the future and I want take part in shaping it. 
+
+                            </div>
                         </div>
                         <div>
                             <div>
-                                <h5>Technology</h5>
-                                
-                            </div>
-                            <div>
                                 <h5>Projects</h5>
-
+                                <ul>
+                                    <li><a href="">Icecord</a></li>
+                                    <li><a href="">TalentShare</a></li>
+                                    <li><a href="">FightRPS</a></li>
+                                </ul>
                             </div>
                             <div>
                                 <h5>Links</h5>
-
+                                <ul>
+                                    <li><a href="">GitHub</a></li>
+                                    <li><a href="">LinkedIn</a></li>
+                                    <li><a href="">AngelList</a></li>
+                                    <li><a href="">Portfolio</a></li>
+                                </ul>
                             </div>
+                            <div>
+                                <h5>Technology</h5>
+                                <ul>
+                                    <li>React</li>
+                                    <li>Redux</li>
+                                    <li>Express</li>
+                                    <li>Rails</li>
+                                    <li>PostgreSQL</li>
+                                    <li>MongoDB</li>
+                                    <li>Three.js</li>
+                                    <li>WebSockets</li>
+                                    <li>AWS</li>
+                                    <li>Blockchain</li>
+                                    <li>Java</li>
+                                    <li>JavaScript</li>
+                                    <li>Python</li>
+                                    <li>Ruby</li>
+                                    <li>C++</li>
+                                    <li>C#</li>
+
+                                </ul>
+                            </div>
+                            
 
                         </div>
                     </div>

@@ -19,3 +19,8 @@ export const patchUserPhoto = (formUser, currentUserId) => dispatch => {
             
         });
 }
+
+export const fetchUser = userId => dispatch => {
+    return UserAPIUtil.fetchUser(userId)
+        .then(res => dispatch(receiveCurrentUser(res)))
+}

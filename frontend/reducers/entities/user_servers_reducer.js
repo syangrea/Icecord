@@ -22,7 +22,7 @@ const UserServersReducer = (state = {}, action) => {
             delete copy[action.userServerId];
             return copy;
         case RECEIVE_CURRENT_USER:
-            return Object.assign({}, action.payload.userServers)
+            return Object.assign({}, state, action.payload.userServers)
 
         case LOGOUT_CURRENT_USER:
             return {}

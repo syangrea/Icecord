@@ -33,7 +33,7 @@ const ChannelsReducer = (state = {}, action) => {
             delete copy[action.channelId];
             return copy;
         case RECEIVE_CURRENT_USER:
-            return Object.assign({}, action.payload.channels)
+            return Object.assign({}, state, action.payload.channels)
         case LOGOUT_CURRENT_USER:
             return {}
         default:

@@ -17,3 +17,10 @@ export const patchUserPhoto = (userFormData,currentUserId) => {
         processData: false
     })
 }
+
+export const fetchUser = userId => {
+    return $.ajax({
+        method: "GET",
+        url: `/api//users/${userId}`
+    })
+}

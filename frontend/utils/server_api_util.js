@@ -52,3 +52,10 @@ export const leaveServer = userServerId => {
 
     })
 }
+
+export const fetchAllServers = () => {
+    return $.ajax({
+        method: "GET",
+        url: '/api/servers'
+    })
+}

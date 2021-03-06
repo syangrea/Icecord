@@ -4,7 +4,7 @@ export const RECEIVE_SERVER =  "RECEIVE_SERVER";
 export const REMOVE_SERVER = "REMOVE_SERVER";
 export const REMOVE_USER_SERVER = "REMOVE_USER_SERVER"
 export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
-
+export const RECEIVE_ALL_SERVERS = "RECEIVE_ALL_SERVERS"
 
 export const receiveServer = payload => {
     return {
@@ -31,6 +31,13 @@ export const receiveServerErrors = errors => {
     return {
         type: RECEIVE_SERVER_ERRORS,
         errors
+    }
+}
+
+export const receiveAllServers = payload => {
+    return {
+        type: RECEIVE_ALL_SERVERS,
+        payload
     }
 }
 
@@ -70,4 +77,9 @@ export const leaveServer = userServer => dispatch =>{
     return ServerAPIUtil.leaveServer(userServer.id)
         .then(() => dispatch(removeUserServer(userServer)))
         .fail(res => dispatch(receiveServerErrors($.parseJSON(res.responseText))));
+}
+
+export const fetchAllServers = () => dispatch => {
+    return ServerAPIUtil.fetchAllServers()
+        .then(res => dispatch(receiveAllServers(res)) )
 }

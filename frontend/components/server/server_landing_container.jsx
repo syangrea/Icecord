@@ -29,7 +29,7 @@ const mDTP = dispatch => {
 
         userSettingsModal: (
             <button onClick={e => dispatch(openSettingsModal('user'))}>
-                <img src="https://img.icons8.com/material/24/ffffff/gear.png" />
+                <i class="fas fa-cog"></i>
             </button>
         ),
 

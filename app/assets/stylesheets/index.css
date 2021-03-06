@@ -23,6 +23,10 @@ button{
   background:#070808;
   z-index: 10;
 }
+ 
+img{
+  object-fit: cover;
+}
 
 .modal-child {
   position: absolute;

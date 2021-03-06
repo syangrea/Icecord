@@ -6,6 +6,7 @@ import { getDMChannels, getDMUsers, getPrivateServers } from '../../utils/server
 import DMListItem from './dm_list_items';
 import MessagesBoxContainer from '../channel/chatbox/messages_box_container';
 import {Route} from 'react-router-dom'
+import { fetchUser } from '../../actions/user_actions';
 
 class ServerHome extends React.Component{
 
@@ -23,8 +24,10 @@ class ServerHome extends React.Component{
     }
 
     componentDidMount(){
-        
-        this.setState({loaded: true})
+        this.props.fetchUser(this.props.currentUser.id)
+            .then(() =>{
+                this.setState({loaded: true})
+            })
 
     }
 
@@ -124,6 +127,9 @@ const mDTP = dispatch => {
         },
         setCurrentDMUserId: userId => {
             return dispatch(setCurrentDMUserId(userId))
+        },
+        fetchUser: userId => {
+            return dispatch(fetchUser(userId))
         }
     }
 }

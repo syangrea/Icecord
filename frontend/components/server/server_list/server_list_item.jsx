@@ -7,6 +7,9 @@ export default class ServerListItem extends React.Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            hover: false
+        }
         // this.handleInvite = this.handleInvite.bind(this);
         this.handleContextClick = this.handleContextClick.bind(this)
         // 
@@ -59,8 +62,27 @@ export default class ServerListItem extends React.Component{
                 {this.props.server.name.slice(0,2)}
             </div>
        }
+       let leftServerBarClass = "left-server-bar";
+       if(this.props.isNavClicked){
+         leftServerBarClass = leftServerBarClass + " server-clicked";
+       }else if(this.state.hover){
+           
+        leftServerBarClass = leftServerBarClass + " server-hovered";
+       }
+       let serverHoverDescription = (
+           <div className={this.state.hover ? "server-hover-description hovered" : "server-hover-description" }>
+               <div>{this.props.server.name}</div>
+            </div>
+       )
+       let leftServerBar = (
+           <div className={leftServerBarClass}></div>
+       )
         return (
-            <div>
+            <div className="server-list-item-container" 
+                onMouseEnter={e => this.setState({hover: true})}
+                onMouseLeave={e => this.setState({hover: false})}>
+                {serverHoverDescription}
+                {leftServerBar}
                 <ContextMenuTrigger id={`server-nav-context-menu-${this.props.server.id}`}>
                     <li onClick={this.handleNavClick(this.props.server.id)} 
                         className={`server-list-item-li ${this.props.isNavClicked ? "nav-clicked" : null}`}>

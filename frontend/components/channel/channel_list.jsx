@@ -1,7 +1,8 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import ChannelListItemContainer from './channel_list_item_container';
 
-export default class ChannelList extends React.Component{
+class ChannelList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -15,7 +16,25 @@ export default class ChannelList extends React.Component{
         this.setState({showTextChannels: !this.state.showTextChannels})
     }
 
-    
+    componentDidMount(){
+        debugger
+        if(this.props.location.pathname.split("/").length === 5){
+            debugger
+            this.props.setCurrentChannel(parseInt(this.props.location.pathname.split("/")[4]))
+        }
+    }
+
+    componentDidUpdate(oldProps){
+        debugger
+        if(this.props.location.pathname.split("/").length === 5 
+            && oldProps.location.pathname.split("/").length === 5){
+                if(this.props.location.pathname.split("/")[4] 
+                    !== oldProps.location.pathname.split("/")[4]){
+
+                        this.props.setCurrentChannel(parseInt(this.props.location.pathname.split("/")[4]))
+                    }
+            }
+    }
 
     render(){
 
@@ -48,3 +67,5 @@ export default class ChannelList extends React.Component{
         )
     }
 }
+
+export default withRouter(ChannelList)

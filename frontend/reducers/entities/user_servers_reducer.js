@@ -19,7 +19,8 @@ const UserServersReducer = (state = {}, action) => {
             return c;
         case REMOVE_USER_SERVER:
             let copy = Object.assign({}, state);
-            delete copy[action.userServerId];
+            delete copy[action.userServer.id];
+            
             return copy;
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, action.payload.userServers)

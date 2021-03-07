@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 import ServerList from './server_list';
 import { createServer, deleteServer, fetchServer, joinServer, leaveServer } from '../../../actions/server_action';
+import { getCurrentUserServers } from '../../../utils/server_util';
 
 const mSTP = state => {
     return {
-        servers: Object.values(state.entities.servers).filter(server => {
-            return !server.directMessage
-        }),
+        servers: getCurrentUserServers(state),
         errors: state.errors.server,
 
     }

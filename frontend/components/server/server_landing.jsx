@@ -47,6 +47,7 @@ export default class ServerLanding extends React.Component{
     }
     
     render(){
+        
         let leftHomeServerBarClass = "left-server-bar";
         if(this.props.navClicked === -1){
           leftHomeServerBarClass = leftHomeServerBarClass + " server-clicked";

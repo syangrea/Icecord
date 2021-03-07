@@ -1,6 +1,7 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
-export default class LeaveServerModal extends React.Component{
+class LeaveServerModal extends React.Component{
     
 
     render(){
@@ -29,7 +30,12 @@ export default class LeaveServerModal extends React.Component{
                             Cancel 
                         </div>
                     </button>
-                    <button className="modal-leave-delete-button" onClick={() => this.props.leaveServer(this.props.userServer)}>
+                    <button className="modal-leave-delete-button" 
+                        onClick={() => {
+                            this.props.leaveServer(this.props.userServer) 
+                                
+                             
+                        }}>
                         <div>
 
                             Leave Server
@@ -44,3 +50,5 @@ export default class LeaveServerModal extends React.Component{
     }
 
 }
+
+export default withRouter(LeaveServerModal);

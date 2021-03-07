@@ -19,3 +19,17 @@ export const getUserServer = (state, serverId) => {
                 && userServer.serverId === serverId
         })
 }
+
+export const getCurrentUserServers = state => {
+    let currentUserId = state.session.id;
+    let servers = state.entities.servers;
+    let currentUserServers = [];
+    Object.values(state.entities.userServers).forEach(userServer => {
+        if(!!servers[userServer.serverId] && userServer.userId === currentUserId 
+            && !servers[userServer.serverId].directMessage){
+                currentUserServers.push(servers[userServer.serverId]);
+            }
+    })
+    debugger
+    return currentUserServers;
+}

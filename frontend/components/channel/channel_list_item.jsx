@@ -32,6 +32,7 @@ export default class ChannelListItem extends React.Component{
         }
     }
 
+
     render(){
 
         let component;

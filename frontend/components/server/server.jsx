@@ -14,15 +14,13 @@ export default class Server extends React.Component{
     }
 
     componentDidMount(){
-        return this.props.fetchUser(currentUserId)
-            .then(() =>{
-
-                return this.props.fetchServer(this.props.match.params.serverId)
-                    .then(() => this.props.history.push(`/server/${this.props.match.params.serverId}/channel/${this.props.channels[0].id}`));
-            })
+        this.props.fetchServer(this.props.match.params.serverId)
+            .then(() => this.props.history.push(`/server/${this.props.match.params.serverId}/channel/${this.props.channels[0].id}`));
+        
     }
 
     componentDidUpdate(oldProps){
+        
         if(oldProps.match.params.serverId !== this.props.match.params.serverId){
             return this.props.fetchServer(this.props.match.params.serverId);
         }
@@ -50,9 +48,17 @@ export default class Server extends React.Component{
         }
     }
 
-   
+   componentDidUpdate(oldProps){
+       debugger
+       if(!this.props.server){
+        debugger
+        this.props.history.push('/server/home')
+        this.props.landingNavClick(-1);
+       }
+   }
 
     render(){
+        if(!this.props.server) return null;
         let channelName = "General";
         let pathParams = this.props.location.pathname.split("/")
         if(pathParams.length === 5){

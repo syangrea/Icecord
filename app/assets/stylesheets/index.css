@@ -8,6 +8,9 @@ button{
   cursor: pointer;
 }
 
+.react-contextmenu{
+  z-index: 1000;
+}
 
 .discord-logo{
   width: 145px;

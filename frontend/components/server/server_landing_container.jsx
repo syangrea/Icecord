@@ -29,7 +29,7 @@ const mDTP = dispatch => {
 
         userSettingsModal: (
             <button onClick={e => dispatch(openSettingsModal('user'))}>
-                <i class="fas fa-cog"></i>
+                <i className="fas fa-cog"></i>
             </button>
         ),
 

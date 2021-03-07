@@ -24,10 +24,9 @@ class ServerHome extends React.Component{
     }
 
     componentDidMount(){
-        this.props.fetchUser(this.props.currentUser.id)
-            .then(() =>{
-                this.setState({loaded: true})
-            })
+        
+        this.setState({loaded: true})
+        
 
     }
 

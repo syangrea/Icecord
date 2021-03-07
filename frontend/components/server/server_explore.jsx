@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { landingNavClick } from '../../actions/filter_actions';
 import { fetchAllServers, joinServer } from '../../actions/server_action';
 import {serversNotAMember} from '../../utils/explore_server_util';
 
@@ -14,15 +15,20 @@ class ServerExplore extends React.Component{
     }
 
     handleJoin(link, serverId){
+        
         //if user is already in server switch to that server else join
-       this.props.joinServer(link, this.props.currentUserId)
+       return e => {
+           this.props.joinServer(link, this.props.currentUserId)
             .then((res) => {
                 this.props.history.push(`/server/${serverId}/channel/${Object.values(res.payload.channels)[0].id}`)
+                this.props.landingNavClick(serverId);
             })
-        
+       }
     }
 
+
     render(){
+        debugger
         return(
             <div id="explore-server-page">
                 <div id="explore-server-nav">
@@ -38,7 +44,7 @@ class ServerExplore extends React.Component{
                             <ul>
                                 {
                                     this.props.servers.map((server,idx) => {
-                                        <li key={idx}>
+                                        return <li key={idx}>
                                             <div className="explore-server-list-item">
                                                 <img src={server.photoUrl} alt=""/>
                                                 <div>{server.name}</div>
@@ -76,6 +82,9 @@ const mDTP = dispatch => {
         },
         joinServer: (link, id) => {
             return dispatch(joinServer(link,id))
+        },
+        landingNavClick: id => {
+            return dispatch(landingNavClick(id));
         }
 
     }

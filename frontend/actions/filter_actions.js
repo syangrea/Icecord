@@ -33,7 +33,7 @@ export const setCurrentChannel = channelId => {
 }
 
 export const setCurrentDMUserId = userId => {
-    debugger
+    
     return {
         type: SET_CURRENT_DM_USER_ID,
         userId

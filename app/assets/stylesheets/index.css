@@ -26,6 +26,10 @@ button{
   background:#070808;
   z-index: 10;
 }
+
+button:hover{
+  cursor: pointer;
+}
  
 img{
   object-fit: cover;

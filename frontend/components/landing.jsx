@@ -22,7 +22,7 @@ const Landing = props => {
                         </h3>
                         <div id="landing-home-links">
 
-                            <a className="link-size-big" href="#">Github</a>
+                            <a className="link-size-big" href="https://github.com/syangrea" target="_blank">Github</a>
                             <Link to="/login" className="link-size-big">Try Demo</Link>
                         </div>
 
@@ -85,7 +85,7 @@ const Landing = props => {
                     <div className="landing-content">
                         <h3>Ready to hire me?</h3>
                         <img src="https://discord.com/assets/a188414ce83f2454b9d71a47c3d95909.svg" alt="" />
-                        <a className="link-size-big"href="#">My Portfolio</a>
+                        <a className="link-size-big" href="#" target="_blank">My Portfolio</a>
                     </div>
                 </div>
                     
@@ -118,18 +118,18 @@ const Landing = props => {
                             <div>
                                 <h5>Projects</h5>
                                 <ul>
-                                    <li><a href="">Icecord</a></li>
-                                    <li><a href="">TalentShare</a></li>
-                                    <li><a href="">FightRPS</a></li>
+                                    <li><a href="https://github.com/syangrea/Icecord" target="_blank">Icecord</a></li>
+                                    <li><a href="https://github.com/asiddiki98/TalentShare" target="_blank">TalentShare</a></li>
+                                    <li><a href="https://github.com/syangrea/FightRPS" target="_blank">FightRPS</a></li>
                                 </ul>
                             </div>
                             <div>
                                 <h5>Links</h5>
                                 <ul>
-                                    <li><a href="">GitHub</a></li>
-                                    <li><a href="">LinkedIn</a></li>
-                                    <li><a href="">AngelList</a></li>
-                                    <li><a href="">Portfolio</a></li>
+                                    <li><a href="https://github.com/syangrea" target="_blank">GitHub</a></li>
+                                    <li><a href="https://www.linkedin.com/in/syangrea/" target="_blank">LinkedIn</a></li>
+                                    <li><a href="https://angel.co/u/stephen-yang-8" target="_blank">AngelList</a></li>
+                                    <li><a href="" target="_blank">Portfolio</a></li>
                                 </ul>
                             </div>
                             <div>

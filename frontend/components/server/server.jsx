@@ -19,12 +19,7 @@ export default class Server extends React.Component{
         
     }
 
-    componentDidUpdate(oldProps){
-        
-        if(oldProps.match.params.serverId !== this.props.match.params.serverId){
-            return this.props.fetchServer(this.props.match.params.serverId);
-        }
-    }
+    
 
     handleContextClick(modalToOpen) {
         
@@ -49,12 +44,15 @@ export default class Server extends React.Component{
     }
 
    componentDidUpdate(oldProps){
-       debugger
-       if(!this.props.server){
-        debugger
-        this.props.history.push('/server/home')
-        this.props.landingNavClick(-1);
-       }
+       
+        if(!this.props.server){
+        
+            this.props.history.push('/server/home')
+            this.props.landingNavClick(-1);
+        }
+        if(oldProps.match.params.serverId !== this.props.match.params.serverId){
+            return this.props.fetchServer(this.props.match.params.serverId);
+        }
    }
 
     render(){

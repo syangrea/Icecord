@@ -28,7 +28,7 @@ class ServerExplore extends React.Component{
 
 
     render(){
-        debugger
+        
         return(
             <div id="explore-server-page">
                 <div id="explore-server-nav">
@@ -37,7 +37,14 @@ class ServerExplore extends React.Component{
                 </div>
 
                 <div id="explore-server-body">
-                    <div id="explore-server-body-header">Explore our servers. All servers available for demo purposes only!</div>
+                    <div id="explore-server-body-header">
+                        <h3>
+                            Explore our servers.
+                        </h3>
+                        <div>
+                            All servers available for demo purposes only!
+                        </div>
+                    </div>
                     <div id="explore-server-body-body">
                         <div id="explore-server-body-body-header">Featured Servers</div>
                         <div id="explore-server-body-body-list">
@@ -45,10 +52,17 @@ class ServerExplore extends React.Component{
                                 {
                                     this.props.servers.map((server,idx) => {
                                         return <li key={idx}>
-                                            <div className="explore-server-list-item">
-                                                <img src={server.photoUrl} alt=""/>
-                                                <div>{server.name}</div>
-                                                <button onClick={this.handleJoin(server.link, server.id)}>Join Server</button>
+                                            <div className="explore-server-list-item" onClick={this.handleJoin(server.link, server.id)}>
+                                                {
+                                                    server.photoUrl ? 
+                                                    <img src={server.photoUrl} alt=""/>
+                                                    :
+                                                    <div className="explore-server-list-item-img-default">
+                                                        <img className="default-icon" src="https://img.icons8.com/dusk/64/000000/discord-logo.png" />
+                                                    </div>
+                                                }
+                                                <div className="explore-server-list-item-name">{server.name}</div>
+                                                
                                             </div>
                                         </li>
                                     })

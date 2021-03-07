@@ -1,0 +1,126 @@
+#explore-server-page{
+    display: flex;
+    width: 100%;
+    
+    #explore-server-nav{
+        flex: 0 0 240px;
+        height: 100%;
+        box-sizing: border-box;
+        background-color: #2f3136;
+        div{
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 16px 0 16px 16px;
+            line-height: 30px;
+        }
+
+    }
+    #explore-server-body{
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #36393f;
+        padding: 32px 3px 32px 32px;
+        overflow-y: scroll;
+        #explore-server-body-header{
+            width: 100%;
+            height: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background-image: image-url;
+            box-sizing: border-box;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: image-url('explore-background.jpg');
+            color: white;
+            flex-direction: column;
+            h3{
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            div{
+                font-size: 14px;
+             
+            }
+        }
+        #explore-server-body-body{
+            margin-top: 25px;
+            #explore-server-body-body-header{
+                color: white;
+                font-size: 25px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            #explore-server-body-body-list{
+                ul{
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    
+                    li{
+                        background-color: #202225;
+                        flex: 1 0 250px;
+                        max-width: 300px;
+                        
+                        box-sizing: border-box;
+                        border-radius: 10px;
+                        margin-right: 20px;
+                        margin-bottom: 20px;
+                        .explore-server-list-item{
+                            border-radius: inherit;
+                            img{
+                                box-sizing: border-box;
+                                width: 100%;
+                                height: 143px;
+                                border-top-left-radius: 10px;
+                                border-top-right-radius: 10px;
+                            }
+                            .explore-server-list-item-img-default{
+                                box-sizing: border-box;
+                                width: 100%;
+                                height: 143px;
+                                border-top-left-radius: 10px;
+                                border-top-right-radius: 10px;
+                                background-color: #7289da;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border: none;
+                                img{
+                                    border: none;
+                                    width: 50px;
+                                    height: 50px;
+                                }
+
+                            }
+                            .explore-server-list-item-name{
+                                padding: 20px 10px;
+
+                                color: white;
+                                font-size: 16px;
+                                font-weight: bold;
+
+                            }
+                            div:hover{
+                                cursor: pointer;
+                                text-decoration: underline;
+                            }
+                        }
+                        .explore-server-list-item:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+
+
+}

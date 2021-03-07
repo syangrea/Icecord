@@ -17,15 +17,15 @@ class ChannelList extends React.Component{
     }
 
     componentDidMount(){
-        debugger
+        
         if(this.props.location.pathname.split("/").length === 5){
-            debugger
+            
             this.props.setCurrentChannel(parseInt(this.props.location.pathname.split("/")[4]))
         }
     }
 
     componentDidUpdate(oldProps){
-        debugger
+        
         if(this.props.location.pathname.split("/").length === 5 
             && oldProps.location.pathname.split("/").length === 5){
                 if(this.props.location.pathname.split("/")[4] 

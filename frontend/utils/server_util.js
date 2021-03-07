@@ -30,6 +30,6 @@ export const getCurrentUserServers = state => {
                 currentUserServers.push(servers[userServer.serverId]);
             }
     })
-    debugger
+    
     return currentUserServers;
 }

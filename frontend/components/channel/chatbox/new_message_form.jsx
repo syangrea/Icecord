@@ -16,6 +16,12 @@ export default class NewMessageForm extends React.Component{
         
     }
 
+    componentDidUpdate(oldProps){
+        if(this.props.pathName !== oldProps.pathName){
+            this.setState({body: ""})
+        }
+    }
+
     handleChange(e){
         e.preventDefault();
         this.setState({body: e.target.value});

@@ -84,6 +84,7 @@ export default class MessagesBox extends React.Component{
         if(oldProps.messages.length != this.props.messages.length){
             this.bottom.scrollIntoView();
         }
+        
     }
 
     componentWillUnmount(){
@@ -133,6 +134,7 @@ export default class MessagesBox extends React.Component{
                        currentUserId={this.props.currentUserId}
                        subscription={this.subscription} 
                        channelId={this.props.channel.id}
+                       pathName={this.props.location.pathname}
                    /> : null
                 }
             </div>

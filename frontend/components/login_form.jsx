@@ -57,7 +57,7 @@ export default class LoginForm extends React.Component {
         return (
             <div className="session-page" id="login" >
                 <img id="black-blob-img" src="https://discord.com/assets/c5c565a8b7cb84db7409e4052ead36fe.png" alt="" />
-                <img className="discord-logo" src={window.discordLogo} alt="" />
+                <Link to="/"><img className="discord-logo" src={window.discordLogo} alt="" /></Link>
                 <div id="login-form" className="session-form-container">
                     <form onSubmit={this.handleSubmit} className="session-form">
                         <h2>Welcome back!</h2>

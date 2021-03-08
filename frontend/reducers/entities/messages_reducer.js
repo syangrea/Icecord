@@ -16,7 +16,7 @@ const MessagesReducer = (state = {}, action) => {
         case RECEIVE_MESSAGES:
             return Object.assign({}, action.messages);
         case RECEIVE_CHANNEL:
-            return Object.assign({}, action.payload.messages);
+            return Object.assign({}, state, action.payload.messages);
         case LOGOUT_CURRENT_USER:
             return {};
         case RECEIVE_SERVER:

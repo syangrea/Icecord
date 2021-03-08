@@ -14,6 +14,8 @@ button{
 
 .discord-logo{
   width: 145px;
+  background: transparent;
+  
   /* z-index: 2; */
 }
 

@@ -77,7 +77,7 @@ const Landing = props => {
                                 without cluttering a single chat.
                             </p>
                         </div>
-                        <img id="landing-big-img" src="https://discord.com/assets/f61264d792fd2556a618c95d97b5de07.svg" alt="" />
+                        <img id="landing-big-img" src="https://raw.githubusercontent.com/syangrea/Icecord/main/readme_images/channel_demo.gif" alt="" />
                         
                     </div>
                 </div>

@@ -37,12 +37,29 @@
         background-color: #36393f;
         display: flex;
         align-items: center;
-        div{
+        justify-content: space-between;
+        div:first-child{
             
             font-size: 15px;
             font-weight: bold;
             margin-left: 25px;
 
+        }
+
+        .social-media-links{
+            justify-self: flex-end;
+            display: flex;
+            margin-right: 30px;
+            
+            a{
+                color: white;
+                transition: .2s;
+                margin-left: 15px;
+                font-size: 25px;
+            }
+            a:hover{
+                transform: scale(1.1);
+            }
         }
     }
     

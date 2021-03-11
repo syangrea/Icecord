@@ -24,6 +24,13 @@ const Landing = props => {
 
                             <a className="link-size-big" href="https://github.com/syangrea" target="_blank">Github</a>
                             <Link to="/login" className="link-size-big">Try Demo</Link>
+
+                            <div className="social-media-links">
+                                <i class="fab fa-github"></i>
+                                <i class="fas fa-user"></i>
+                                <i class="fab fa-linkedin"></i>
+                                <i class="fab fa-angellist"></i>
+                            </div>
                         </div>
 
                     </div>

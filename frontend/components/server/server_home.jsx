@@ -62,14 +62,23 @@ class ServerHome extends React.Component{
                         </div>
                     </div>
                     <div id="home-body-header">
-                        <div>
+                        
 
                             {
                                 (this.state.loaded && 
                                 this.props.location.pathname.split("/").length === 4) ? 
-                                this.findUserName() : null
+                                <div>{this.findUserName()}</div> : <div>Home</div>
                             }
-                        </div>
+
+                            <div className="social-media-links">
+                                <a href="https://github.com/syangrea" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/syangrea/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://angel.co/u/stephen-yang-8" target="_blank"><i class="fab fa-angellist"></i></a>
+                                <a href="https://syangrea.github.io/" target="_blank"><i class="fas fa-user"></i></a>
+                                
+                             
+                            </div>
+                        
                     </div>
                 </div>
                 

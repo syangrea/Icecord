@@ -43,6 +43,7 @@
         #server-channel-name-server-page{
             display: flex;
             background-color: #36393f;
+            justify-content: space-between;
             width: 100%;
             align-items: center;
             .hashtag-symbol{
@@ -58,6 +59,21 @@
                 font-size: 16px;
                 font-weight: bold;
                 margin-left: 8px;
+            }
+            .social-media-links{
+                justify-self: flex-end;
+                display: flex;
+                margin-right: 30px;
+                
+                a{
+                    color: white;
+                    transition: .2s;
+                    margin-left: 15px;
+                    font-size: 25px;
+                }
+                a:hover{
+                    transform: scale(1.1);
+                }
             }
         }
     }
